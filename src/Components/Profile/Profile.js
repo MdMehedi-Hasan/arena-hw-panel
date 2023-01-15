@@ -33,17 +33,6 @@ const Profile = () => {
                         <li className='flex gap-3'><span>Full Name:</span> <span className='flex items-center'>Something jhdjhfs <Icon className='ml-2' icon="material-symbols:edit" /></span> </li>
                         
                     </ul>
-                    {/* <ul className='flex flex-col gap-3'>
-                        <li className='flex items-center'>Something jhdjhfs <Icon className='ml-2' icon="material-symbols:edit" /></li>
-                        <li className='flex items-center'>Something jhdjhfs <Icon className='ml-2' icon="material-symbols:edit" /></li>
-                        <li className='flex items-center'>Something jhdjhfs <Icon className='ml-2' icon="material-symbols:edit" /></li>
-                        <li className='flex items-center'>Something jhdjhfs <Icon className='ml-2' icon="material-symbols:edit" /></li>
-                        <li className='flex items-center'>Something jhdjhfs <Icon className='ml-2' icon="material-symbols:edit" /></li>
-                        <li className='flex items-center'>Something jhdjhfs <Icon className='ml-2' icon="material-symbols:edit" /></li>
-                        <li className='flex items-center'>Something jhdjhfs <Icon className='ml-2' icon="material-symbols:edit" /></li>
-                        <li className='flex items-center'>Something jhdjhfs <Icon className='ml-2' icon="material-symbols:edit" /></li>
-                        <li className='flex items-center'>Something jhdjhfs <Icon className='ml-2' icon="material-symbols:edit" /></li>
-                    </ul> */}
                 </div>
                 </div>
             </div>

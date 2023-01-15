@@ -46,18 +46,18 @@ const Base = () => {
                     {/* Sidebar content here */}
                     {/* <li className='hover:bg-white-100 bg-white p-0'><Link to="/" className=' flex justify-center'><img src={logo} alt="logo" width="111px"></img></Link></li> */}
                     <li className='mt-16'><Link to="/profile"><Icon icon="material-symbols:person" /> Profile</Link></li>
-                    <li><Link to="/homework"><Icon icon="fluent-mdl2:work-item-bug" /> Assign Homework</Link></li>
-                    <li><Link to="/homework"><Icon icon="ic:round-add-task" /> Add Batch Name</Link></li>
-                    <li><Link to="/homework"><Icon icon="ic:round-person-add-alt" /> Add User</Link></li>
-                    <li><Link to="/homework"><Icon icon="fluent:clipboard-task-list-rtl-24-filled" /> List of Assignment</Link></li>
-                    <li><Link to="/homework"><Icon icon="fluent:shield-task-28-filled" /> Login Status</Link></li>
-                    <li><Link to="/homework"><Icon icon="fluent:shield-task-28-filled" /> Inactive Users</Link></li>
+                    <li><Link to="/homework"><Icon icon="fluent-mdl2:work-item-bug" /> Assesment</Link></li>
+                    <li><Link to="/homework"><Icon icon="ic:round-add-task" /> Assignments</Link></li>
+                    <li><Link to="/homework"><Icon icon="ic:round-person-add-alt" /> Login Status</Link></li>
+                    <li><Link to="/homework"><Icon icon="fluent:clipboard-task-list-rtl-24-filled" /> Class</Link></li>
+                    <li><Link to="/homework"><Icon icon="fluent:shield-task-28-filled" /> Support Topics</Link></li>
+                    {/* <li><Link to="/homework"><Icon icon="fluent:shield-task-28-filled" /> Inactive Users</Link></li>
                     <li><Link to="/homework"><Icon icon="fluent:shield-task-28-filled" /> Attendance</Link></li>
                     <li><Link to="/homework"><Icon icon="fluent:shield-task-28-filled" /> Assesment</Link></li>
                     <li><Link to="/homework"><Icon icon="fluent:shield-task-28-filled" /> Join Class</Link></li>
-                    <li><Link to="/homework"><Icon icon="fluent:shield-task-28-filled" /> Support Topics</Link></li>
-                    <li><Link to="/homework"><Icon icon="fluent:shield-task-28-filled" /> Change Password</Link></li>
-                    <li><Link to="/homework"><Icon icon="fluent:shield-task-28-filled" /> Logout</Link></li>
+                    <li><Link to="/homework"><Icon icon="fluent:shield-task-28-filled" /> Support Topics</Link></li> */}
+                    {/* <li><Link to="/homework"><Icon icon="fluent:shield-task-28-filled" /> Change Password</Link></li> */}
+                    {/* <li><Link to="/homework"><Icon icon="fluent:shield-task-28-filled" /> Logout</Link></li> */}
                 </ul>
 
             </div>

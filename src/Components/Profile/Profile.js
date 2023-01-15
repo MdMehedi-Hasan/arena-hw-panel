@@ -5,7 +5,7 @@ import './Profile.css'
 const Profile = () => {
     return (
         <div className='grid grid-cols-2 gap-16 mx-10 mt-16 relative'>
-            <div className='rounded-2xl bg-[linear-gradient(90deg,#56b5e3,#7d58a5);]'>
+            <div className='max-w-xl rounded-2xl bg-[linear-gradient(90deg,#56b5e3,#7d58a5);]'>
                 {/* <div className='cstm'>
                 </div> */}
                 <div className='flex justify-center absolute left-[22%] top-[10%] z-10'>{/* left-[21%] top-[10%] */} {/* mt-20 ml-24 */}
@@ -16,22 +16,21 @@ const Profile = () => {
                     </div>
                 </div>
                 <div className='cstm'>
-                <div className='flex justify-around relative z-10 pt-16 pb-36 mt-28'>
+                <div className='relative z-10 pt-16 pb-36 mt-28 ml-12'>
                     <ul>
-                        <li className='flex gap-3'><span>Full Name:</span> <span className='flex items-center'>Something jhdjhfs <Icon className='ml-2' icon="material-symbols:edit" /></span> </li>
-                        <li className='flex gap-3'><span>Full Name:</span> <span className='flex items-center'>Something jhdjhfs <Icon className='ml-2' icon="material-symbols:edit" /></span> </li>
-                        <li className='flex gap-3'><span>Full Name:</span> <span className='flex items-center'>Something jhdjhfs <Icon className='ml-2' icon="material-symbols:edit" /></span> </li>
-                        <li className='flex gap-3'><span>Full Name:</span> <span className='flex items-center'>Something jhdjhfs <Icon className='ml-2' icon="material-symbols:edit" /></span> </li>
-                        <li className='flex gap-3'><span>Full Name:</span> <span className='flex items-center'>Something jhdjhfs <Icon className='ml-2' icon="material-symbols:edit" /></span> </li>
-                        <li className='flex gap-3'><span>Full Name:</span> <span className='flex items-center'>Something jhdjhfs <Icon className='ml-2' icon="material-symbols:edit" /></span> </li>
-                        <li className='flex gap-3'><span>Full Name:</span> <span className='flex items-center'>Something jhdjhfs <Icon className='ml-2' icon="material-symbols:edit" /></span> </li>
-                        <li className='flex gap-3'><span>Full Name:</span> <span className='flex items-center'>Something jhdjhfs <Icon className='ml-2' icon="material-symbols:edit" /></span> </li>
-                        <li className='flex gap-3'><span>Full Name:</span> <span className='flex items-center'>Something jhdjhfs <Icon className='ml-2' icon="material-symbols:edit" /></span> </li>
-                        <li className='flex gap-3'><span>Full Name:</span> <span className='flex items-center'>Something jhdjhfs <Icon className='ml-2' icon="material-symbols:edit" /></span> </li>
-                        <li className='flex gap-3'><span>Full Name:</span> <span className='flex items-center'>Something jhdjhfs <Icon className='ml-2' icon="material-symbols:edit" /></span> </li>
-                        <li className='flex gap-3'><span>Full Name:</span> <span className='flex items-center'>Something jhdjhfs <Icon className='ml-2' icon="material-symbols:edit" /></span> </li>
-                        <li className='flex gap-3'><span>Full Name:</span> <span className='flex items-center'>Something jhdjhfs <Icon className='ml-2' icon="material-symbols:edit" /></span> </li>
-                        
+                        <li className='flex gap-3 items-center'><div className='w-full flex items-center'><div className='w-4/12'>Full Name:</div> <div className='w-7/12'>Something jhdjhfs</div></div> <Icon className='mr-10' icon="material-symbols:edit" /></li>
+                        <li className='flex gap-3 items-center'><div className='w-full flex items-center'><div className='w-4/12'>Gender:</div> <div className='w-7/12'>Something jhdjhfs</div></div> <Icon className='mr-10' icon="material-symbols:edit" /></li>
+                        <li className='flex gap-3 items-center'><div className='w-full flex items-center'><div className='w-4/12'>Batch:</div> <div className='w-7/12'>Something jhdjhfs</div></div> <Icon className='mr-10' icon="material-symbols:edit" /></li>
+                        <li className='flex gap-3 items-center'><div className='w-full flex items-center'><div className='w-4/12'>Type:</div> <div className='w-7/12'>Something jhdjhfs</div></div> <Icon className='mr-10' icon="material-symbols:edit" /></li>
+                        <li className='flex gap-3 items-center'><div className='w-full flex items-center'><div className='w-4/12'>Teacher id:</div> <div className='w-7/12'>Something jhdjhfs</div></div> <Icon className='mr-10' icon="material-symbols:edit" /></li>
+                        <li className='flex gap-3 items-center'><div className='w-full flex items-center'><div className='w-4/12'>Assigned by:</div> <div className='w-7/12'>Something jhdjhfs</div></div> <Icon className='mr-10' icon="material-symbols:edit" /></li>
+                        <li className='flex gap-3 items-center'><div className='w-full flex items-center'><div className='w-4/12'>Something:</div> <div className='w-7/12'>Something jhdjhfs</div></div> <Icon className='mr-10' icon="material-symbols:edit" /></li>
+                        <li className='flex gap-3 items-center'><div className='w-full flex items-center'><div className='w-4/12'>Demo:</div> <div className='w-7/12'>Something jhdjhfs</div></div> <Icon className='mr-10' icon="material-symbols:edit" /></li>
+                        <li className='flex gap-3 items-center'><div className='w-full flex items-center'><div className='w-4/12'>Fb link:</div> <div className='w-7/12'>Something jhdjhfs</div></div> <Icon className='mr-10' icon="material-symbols:edit" /></li>
+                        <li className='flex gap-3 items-center'><div className='w-full flex items-center'><div className='w-4/12'>Lorem:</div> <div className='w-7/12'>Something jhdjhfs</div></div> <Icon className='mr-10' icon="material-symbols:edit" /></li>
+                        <li className='flex gap-3 items-center'><div className='w-full flex items-center'><div className='w-4/12'>Ipsum:</div> <div className='w-7/12'>Something jhdjhfs</div></div> <Icon className='mr-10' icon="material-symbols:edit" /></li>
+                        <li className='flex gap-3 items-center'><div className='w-full flex items-center'><div className='w-4/12'>Doller Sit:</div> <div className='w-7/12'>Something jhdjhfs</div></div> <Icon className='mr-10' icon="material-symbols:edit" /></li>
+                        <li className='flex gap-3 items-center'><div className='w-full flex items-center'><div className='w-4/12'>Amet:</div> <div className='w-7/12'>Something jhdjhfs</div></div> <Icon className='mr-10' icon="material-symbols:edit" /></li>
                     </ul>
                 </div>
                 </div>

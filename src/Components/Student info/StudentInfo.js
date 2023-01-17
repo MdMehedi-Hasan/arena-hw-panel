@@ -1,5 +1,6 @@
 import { Icon } from '@iconify/react';
 import React from 'react';
+import { Link, Outlet } from 'react-router-dom';
 import './StudentInfo.css'
 
 const StudentInfo = () => {
@@ -95,16 +96,20 @@ const StudentInfo = () => {
                             <input type="text" placeholder="Type here" className="input input-bordered w-full max-w-xs" />
                         </div>
                     </div>
-                    <button type="" className='btn btn-accent mt-5'>Add</button>
+                    <button type="" className='btn btn-accent mt-5 text-white'>Create user</button>
                 </div>
             </div>
             <div>
                 <div className='mx-10'>
-                    <button className='btn btn-outline btn-accent mr-5 rounded-full'>Batch List</button>
-                    <button className='btn btn-outline btn-accent mb-3 rounded-full'>User List</button>
+                    <Link to="/student-info"><button className='btn btn-accent mr-5 rounded-full'>Batch List</button></Link>
+                    <Link to="/student-Info/student-list"><button className='btn btn-outline btn-accent mb-3 rounded-full'>User List</button></Link>
                     <hr />
                 </div>
-                <div className="overflow-x-auto p-5">
+                <div>
+                    <Outlet/>
+                </div>
+                
+                {/* <div className="overflow-x-auto p-5">
                     <table className="table table-zebra w-full ">
                         <thead>
                             <tr>
@@ -153,7 +158,7 @@ const StudentInfo = () => {
                             </tr>
                         </tbody>
                     </table>
-                </div>
+                </div> */}
             </div>
         </div>
     );

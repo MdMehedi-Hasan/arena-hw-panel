@@ -7,13 +7,18 @@ import StudentStatus from './Components/Student-status/StudentStatus';
 import Assignments from './Components/Assignments/Assignments';
 import Class from './Components/Class/Class';
 import Support from './Components/Support/Support';
+import BatchList from './Components/Student info/BatchList';
+import StudentList from './Components/Student info/StudentList';
 
 const App = () => {
   return (
     <Routes>
       <Route path='/' element={<Base/>}>
       <Route element={<Profile/>} index></Route>
-      <Route path='/student-Info' element={<StudentInfo/>}></Route>
+      <Route path='/student-Info' element={<StudentInfo/>}>
+        <Route element={<BatchList/>} index/>
+        <Route path="/student-Info/student-list" element={<StudentList/>} />
+      </Route>
       <Route path='/student-status' element={<StudentStatus/>}></Route>
       <Route path='/assignments' element={<Assignments/>}></Route>
       <Route path='/class' element={<Class/>}></Route>

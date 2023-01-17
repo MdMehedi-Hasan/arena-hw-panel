@@ -3,10 +3,10 @@ import React from 'react';
 const Class = () => {
     return (
         <div>
-            <div>
-
+            <div className='bg-white rounded-3xl m-3 p-5'>
+                <h1 className='text-center text-4xl'>Start Class</h1>
             </div>
-            <div>
+            <div className='bg-white rounded-3xl m-3 p-5'>
                 <div className="form-control w-full max-w-xs">
                     <label className="label">
                         <span className="label-text">Pick the best fantasy franchise</span>
@@ -20,13 +20,13 @@ const Class = () => {
                         <option>Star Trek</option>
                     </select>
                 </div>
-                <div>
-                    <button type="" className='btn btn-primary'>Activate</button>
-                    <button type="" className='btn btn-primary'>Deactivate</button>
+                <div className='mt-5'>
+                    <button type="" className='btn btn-accent'>Activate</button>
+                    <button type="" className='btn btn-accent ml-3'>Deactivate</button>
                 </div>
             </div>
             <div>
-                <div className="overflow-x-auto">
+                <div className="overflow-x-auto mx-5 mt-5">
                     <table className="table w-full">
                         <thead>
                             <tr>

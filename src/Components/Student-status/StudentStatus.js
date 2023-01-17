@@ -4,12 +4,11 @@ const StudentStatus = () => {
     return (
         <div>
             <div className='grid grid-cols-3'>
-                <div className='bg-white'>
+                <div className='bg-white rounded-3xl p-5 m-10'>
                     <h1>Login</h1>
                     <div className="form-control w-full max-w-xs">
                         <label className="label">
                             <span className="label-text">Pick the best fantasy franchise</span>
-                            <span className="label-text-alt">Alt label</span>
                         </label>
                         <select className="select select-bordered">
                             <option disabled selected>Pick one</option>
@@ -20,14 +19,13 @@ const StudentStatus = () => {
                             <option>Star Trek</option>
                         </select>
                     </div>
-                    <button type="" className='btn btn-primary'>Check Log in status</button>
+                    <button type="" className='btn btn-accent mt-5'>Check Log in status</button>
                 </div>
-                <div>
+                <div className='bg-white rounded-3xl p-5 m-10'>
                     <h1>Inactive/Assignment Unsibmitted</h1>
                     <div className="form-control w-full max-w-xs">
                         <label className="label">
                             <span className="label-text">Pick the best fantasy franchise</span>
-                            <span className="label-text-alt">Alt label</span>
                         </label>
                         <select className="select select-bordered">
                             <option disabled selected>Pick one</option>
@@ -41,7 +39,6 @@ const StudentStatus = () => {
                     <div className="form-control w-full max-w-xs">
                         <label className="label">
                             <span className="label-text">Pick the best fantasy franchise</span>
-                            <span className="label-text-alt">Alt label</span>
                         </label>
                         <select className="select select-bordered">
                             <option disabled selected>Pick one</option>
@@ -52,14 +49,13 @@ const StudentStatus = () => {
                             <option>Star Trek</option>
                         </select>
                     </div>
-                    <button type="" className='btn btn-primary'>Check Log in status</button>
+                    <button type="" className='btn btn-accent mt-3'>Check Log in status</button>
                     </div>
-                <div>
+                <div className='bg-white rounded-3xl p-5 m-10'>
                     <h1>Atendance</h1>
                     <div className="form-control w-full max-w-xs">
                         <label className="label">
                             <span className="label-text">Pick the best fantasy franchise</span>
-                            <span className="label-text-alt">Alt label</span>
                         </label>
                         <select className="select select-bordered">
                             <option disabled selected>Pick one</option>
@@ -73,7 +69,6 @@ const StudentStatus = () => {
                     <div className="form-control w-full max-w-xs">
                         <label className="label">
                             <span className="label-text">Pick the best fantasy franchise</span>
-                            <span className="label-text-alt">Alt label</span>
                         </label>
                         <select className="select select-bordered">
                             <option disabled selected>Pick one</option>
@@ -86,7 +81,7 @@ const StudentStatus = () => {
                     </div>
                     </div>
             </div>
-            <div>
+            <div className='m-10'>
                 <div className="overflow-x-auto">
                     <table className="table table-zebra w-full">
                         <thead>

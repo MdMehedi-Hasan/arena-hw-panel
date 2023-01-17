@@ -3,7 +3,7 @@ import React from 'react';
 const Support = () => {
     return (
         <div>
-            <div>
+            <div className='bg-white rounded-3xl m-3 p-5'>
                 <div className="form-control w-full max-w-xs">
                     <label className="label">
                         <span className="label-text">Pick the best fantasy franchise</span>
@@ -19,7 +19,7 @@ const Support = () => {
                 </div>
             </div>
             <div>
-                <div className="overflow-x-auto">
+                <div className="overflow-x-auto mx-5 mt-5">
                     <table className="table w-full">
                         <thead>
                             <tr>

@@ -4,7 +4,7 @@ const Assignments = () => {
     return (
         <div>
             <div className='grid grid-cols-2'>
-                <div>
+                <div className='bg-white rounded-3xl m-3 p-5'>
                     <div className="form-control w-full max-w-xs">
                         <label className="label">
                             <span className="label-text">Pick the best fantasy franchise</span>
@@ -50,7 +50,7 @@ const Assignments = () => {
                         </label>
                     </div>
                 </div>
-                <div>
+                <div className='bg-white rounded-3xl m-3 p-5'>
                     <div className="form-control w-full max-w-xs">
                         <label className="label">
                             <span className="label-text">Pick the best fantasy franchise</span>
@@ -78,14 +78,14 @@ const Assignments = () => {
                         </select>
                     </div>
                     <div>
-                        <button type="" className='btn btn-primary rounded-full mt-3'>Attendance</button>
-                        <button type="" className='btn btn-primary rounded-full mt-3 mx-3'>Assignment</button>
-                        <button type="" className='btn btn-primary rounded-full mt-3'>Assesment</button>
+                        <button type="" className='btn btn-accent rounded-full mt-3'>Attendance</button>
+                        <button type="" className='btn btn-accent rounded-full mt-3 mx-3'>Assignment</button>
+                        <button type="" className='btn btn-accent rounded-full mt-3'>Assesment</button>
                     </div>
                 </div>
             </div>
             <div>
-                <div className="overflow-x-auto">
+                <div className="overflow-x-auto mx-5 mt-5">
                     <table className="table table-zebra w-full">
                         <thead>
                             <tr>

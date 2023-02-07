@@ -39,11 +39,11 @@ const Base = () => {
 
                 {/* Page content here */}
                 <Outlet />
-                <div className='absolute top-3/4 right-3 p-4 rounded-full bg-[linear-gradient(90deg,#56b5e3,#7d58a5)] text-white text-4xl cursor-pointer'>
+                <div tabIndex="0" className='dropdown absolute top-3/4 right-3 p-4 rounded-full bg-[linear-gradient(90deg,#56b5e3,#7d58a5)] text-white text-4xl cursor-pointer'>
                     {/* <Icon icon="ri:lightbulb-flash-fill" /> */}
                     <div className="dropdown dropdown-top dropdown-end block">
-                        <label tabindex="0"><Icon icon="ri:lightbulb-flash-fill" /></label>
-                        <p tabindex="0" className="dropdown-content mb-5 menu p-2 shadow bg-base-100 rounded-box w-52 text-black text-sm">
+                        <label tabIndex="0"><Icon className='cursor-pointer' icon="ri:lightbulb-flash-fill" /></label>
+                        <p tabIndex="0" className="dropdown-content mb-5 menu p-2 shadow bg-base-100 rounded-box w-52 text-black text-sm">
                         অবসর সময়ের শখের মধ্যে একটা হলো অরিগামি — কাগজ ভাঁজ করে মডেল বানানো। ম্যাসাচুসেটস ইনস্টিটিউট অফ টেকনোলজি-র এক গবেষকদল সেই অবসর সময়ের শখকেই এক অন্য মাত্রায় নিয়ে গেলেন। এক ধরণের পলিমারের সাহায্য নিয়ে তারা কাগজে এমন ব্যবস্থা করলেন যে সেটা আপনা থেকে ভাঁজ হয়ে একটা রোবটের আকার নেয়। সেই রোবটটাকে তারপর তারা চালিয়েও ফেললেন। কিভাবে করলেন তারা এটা? আপনা থেকে কাগজে ওরকম নিখুঁত ভাঁজ কিভাবে সম্ভব হলো? রোবটটাকে চালানোই বা গেল কি করে? পদার্থবিদ্যার সহজ কিছু নীতি কাজে লাগিয়েই কিন্তু সম্ভব হলো এই ম্যাজিক!
                         </p>
                     </div>
@@ -54,7 +54,7 @@ const Base = () => {
                 <ul className="menu p-4 w-4/12 lg:w-auto bg-base-100 text-white text-lg font-semibold pt-0 bg-[linear-gradient(#56b5e3,#7d58a5)]">
                     {/* Sidebar content here */}
                     {/* <li className='hover:bg-white-100 bg-white p-0'><Link to="/" className=' flex justify-center'><img src={logo} alt="logo" width="111px"></img></Link></li> */}
-                    <li className='mt-16'><Link to="/"><Icon icon="material-symbols:person" /> Profile</Link></li>
+                    <li className='mt-16'><Link to="/profile"><Icon icon="material-symbols:person" /> Profile</Link></li>
                     <li><Link to="/student-Info"><Icon icon="fluent-mdl2:work-item-bug" />Student Info</Link></li>
                     <li><Link to="/student-status"><Icon icon="ic:round-add-task" /> Student Status</Link></li>
                     <li><Link to="/assignments"><Icon icon="ic:round-person-add-alt" /> Assignments</Link></li>

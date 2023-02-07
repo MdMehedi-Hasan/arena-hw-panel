@@ -1,11 +1,11 @@
 import { Icon } from '@iconify/react';
 import React from 'react';
-import { CartesianGrid, Cell, Legend, Line, LineChart, Pie, PieChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
+import { Bar, BarChart, CartesianGrid, Cell, Legend, Line, LineChart, Pie, PieChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import profile from '../Assets/profile.jpg'
 import './Profile.css'
 
 const Profile = () => {
-  const data2 = [
+  const data = [
     {
       name: 'Page A',
       uv: 4000,
@@ -51,9 +51,9 @@ const Profile = () => {
   ];
   // const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
   return (
-    <div>
-      <div className='flex mx-10 mt-16 relative gap-24'>
-        <div className='w-2/6 max-w-lg rounded-2xl bg-white'> {/* max-w-xl bg-[linear-gradient(90deg,#56b5e3,#7d58a5);]*/}
+    <div className='container'>
+      <div className='grid grid-cols-2 profile-card mt-16'>
+        <div className=' rounded-2xl bg-white'> {/* w-full max-w-lg bg-[linear-gradient(90deg,#56b5e3,#7d58a5);]*/}
           {/* <div className='cstm'>
                 </div> */}
           <div className='flex flex-col justify-center items-center pt-20'>{/* left-[21%] top-[10%] */} {/* mt-20 ml-24 absolute left-[15%] top-[12%] z-10*/}
@@ -66,21 +66,23 @@ const Profile = () => {
             <h2>sahriarhoque@gmail.com</h2>
           </div>
           <div className=''>{/* cstm */}
-            <div className='relative z-10 '> {/* pt-16 pb-36 mt-28 ml-12 */}
+            <div className=' '> {/* pt-16 pb-36 mt-28 ml-12 */}
               <ul className='pl-5 py-12 mt-10 border-t-4'>
-                <li className='flex gap-3 items-center'><div className='w-full flex items-center'><div className='w-4/12'>Full Name:</div> <div className='w-7/12'>Something jhdjhfs</div></div> <Icon className='mr-10' icon="material-symbols:edit" /></li>
-                <li className='flex gap-3 items-center'><div className='w-full flex items-center'><div className='w-4/12'>Gender:</div> <div className='w-7/12'>Something jhdjhfs</div></div> <Icon className='mr-10' icon="material-symbols:edit" /></li>
-                <li className='flex gap-3 items-center'><div className='w-full flex items-center'><div className='w-4/12'>Batch:</div> <div className='w-7/12'>Something jhdjhfs</div></div> <Icon className='mr-10' icon="material-symbols:edit" /></li>
-                <li className='flex gap-3 items-center'><div className='w-full flex items-center'><div className='w-4/12'>Type:</div> <div className='w-7/12'>Something jhdjhfs</div></div> <Icon className='mr-10' icon="material-symbols:edit" /></li>
-                <li className='flex gap-3 items-center'><div className='w-full flex items-center'><div className='w-4/12'>Teacher id:</div> <div className='w-7/12'>Something jhdjhfs</div></div> <Icon className='mr-10' icon="material-symbols:edit" /></li>
-                <li className='flex gap-3 items-center'><div className='w-full flex items-center'><div className='w-4/12'>Assigned by:</div> <div className='w-7/12'>Something jhdjhfs</div></div> <Icon className='mr-10' icon="material-symbols:edit" /></li>
-                <li className='flex gap-3 items-center'><div className='w-full flex items-center'><div className='w-4/12'>Something:</div> <div className='w-7/12'>Something jhdjhfs</div></div> <Icon className='mr-10' icon="material-symbols:edit" /></li>
+                <li className='grid grid-cols-6 items-center'><div className='col-span-5 w-full flex items-center gap-5'><div className='w-4/12 text-lg font-semibold'>Full Name:</div> <div className='w-7/12'>Md. Mehedi Hasan</div></div> <Icon className='mr-10' icon="material-symbols:edit" /></li>
+                <li className='grid grid-cols-6 items-center'><div className='col-span-5 w-full flex items-center gap-5'><div className='w-4/12 text-lg font-semibold'>Teacher id:</div> <div className='w-7/12'>25</div></div></li>
+                <li className='grid grid-cols-6 items-center'><div className='col-span-5 w-full flex items-center gap-5'><div className='w-4/12 text-lg font-semibold'>Gender:</div> <div className='w-7/12'>Male</div></div> <Icon className='mr-10' icon="material-symbols:edit" /></li>
+                <li className='grid grid-cols-6 items-center'><div className='col-span-5 w-full flex items-center gap-5'><div className='w-4/12 text-lg font-semibold'>Phone Number:</div> <div className='w-7/12'>+880132502554</div></div></li>
+                <li className='grid grid-cols-6 items-center'><div className='col-span-5 w-full flex items-center gap-5'><div className='w-4/12 text-lg font-semibold'>Fb id:</div> <div className='w-7/12'>htps://something.com</div></div> <Icon className='mr-10' icon="material-symbols:edit" /></li>
+                <li className='grid grid-cols-6 items-center'><div className='col-span-5 w-full flex items-center gap-5'><div className='w-4/12 text-lg font-semibold'>Assigned by:</div> <div className='w-7/12'>Sahriar Ifti</div></div></li>
+                <li className='grid grid-cols-6 items-center'><div className='col-span-5 w-full flex items-center gap-5'><div className='w-4/12 text-lg font-semibold'>Responsible for:</div> <div className='w-7/12'>All batches</div></div></li>
+                <li className='grid grid-cols-6 items-center'><div className='col-span-5 w-full flex items-center gap-5'><div className='w-4/12 text-lg font-semibold'>Joined:</div> <div className='w-7/12'>15 january 2023</div></div></li>
+{/*             <li className='flex gap-3 items-center'><div className='w-full flex items-center'><div className='w-4/12'>Something:</div> <div className='w-7/12'>Something jhdjhfs</div></div> <Icon className='mr-10' icon="material-symbols:edit" /></li>
                 <li className='flex gap-3 items-center'><div className='w-full flex items-center'><div className='w-4/12'>Demo:</div> <div className='w-7/12'>Something jhdjhfs</div></div> <Icon className='mr-10' icon="material-symbols:edit" /></li>
                 <li className='flex gap-3 items-center'><div className='w-full flex items-center'><div className='w-4/12'>Fb link:</div> <div className='w-7/12'>Something jhdjhfs</div></div> <Icon className='mr-10' icon="material-symbols:edit" /></li>
                 <li className='flex gap-3 items-center'><div className='w-full flex items-center'><div className='w-4/12'>Lorem:</div> <div className='w-7/12'>Something jhdjhfs</div></div> <Icon className='mr-10' icon="material-symbols:edit" /></li>
                 <li className='flex gap-3 items-center'><div className='w-full flex items-center'><div className='w-4/12'>Ipsum:</div> <div className='w-7/12'>Something jhdjhfs</div></div> <Icon className='mr-10' icon="material-symbols:edit" /></li>
                 <li className='flex gap-3 items-center'><div className='w-full flex items-center'><div className='w-4/12'>Doller Sit:</div> <div className='w-7/12'>Something jhdjhfs</div></div> <Icon className='mr-10' icon="material-symbols:edit" /></li>
-                <li className='flex gap-3 items-center'><div className='w-full flex items-center'><div className='w-4/12'>Amet:</div> <div className='w-7/12'>Something jhdjhfs</div></div> <Icon className='mr-10' icon="material-symbols:edit" /></li>
+                <li className='flex gap-3 items-center'><div className='w-full flex items-center'><div className='w-4/12'>Amet:</div> <div className='w-7/12'>Something jhdjhfs</div></div> <Icon className='mr-10' icon="material-symbols:edit" /></li> */}
               </ul>
             </div>
           </div>
@@ -131,26 +133,26 @@ const Profile = () => {
               </div>
           </div>
         </div> */}
-        <div className='grid grid-cols-2 gap-x-20'>
+        <div className='grid grid-cols-2 w-full content-between'>
           <div className='h-fit w-auto max-w-xs flex flex-col items-center justify-between border rounded-3xl p-5 bg-white'>
             <div className='w-full flex items-center justify-between text-2xl font-semibold'>
               <h1>Total Batch</h1>
               <Icon icon="mdi:file-import" className='text-6xl'/>
             </div>
               <div className='mt-7'>
-              <div className='text-6xl font-bold p-10'>
+              <div className='text-5xl font-bold p-10'>
                 <p>25</p>
             </div>
               </div>
           </div>
           <div className='h-fit w-auto max-w-xs flex flex-col items-center justify-between border rounded-3xl p-5 bg-white'>
             <div className='w-full flex items-center justify-between text-2xl font-semibold'>
-              <h1>Total Students</h1>
+              <h1>Running Batch</h1>
               <Icon icon="mdi:file-import" className='text-6xl'/>
             </div>
               <div className='mt-7'>
-              <div className='text-6xl font-bold p-10'>
-                <p>25000</p>
+              <div className='text-5xl font-bold p-10'>
+                <p>12</p>
             </div>
               </div>
           </div>
@@ -168,10 +170,10 @@ const Profile = () => {
           <div className='h-fit w-auto max-w-xs flex flex-col items-center justify-between border rounded-3xl p-5 bg-white'>
             <div className='w-full flex items-center justify-between text-2xl font-semibold'>
               <h1>Total Assignments</h1>
-              <Icon icon="mdi:file-import" className='text-6xl'/>
+              <Icon icon="ic:round-assignment" className='text-6xl'/>
             </div>
               <div className='mt-7'>
-              <div className='text-6xl font-bold p-10'> 
+              <div className='text-5xl font-bold p-10'> 
                 <p>250</p>
             </div>
               </div>
@@ -179,10 +181,10 @@ const Profile = () => {
           <div className='h-fit w-auto max-w-xs flex flex-col items-center justify-between border rounded-3xl p-5 bg-white'>
             <div className='w-full flex items-center justify-between text-2xl font-semibold'>
               <h1>Pending Assignments</h1>
-              <Icon icon="mdi:file-import" className='text-6xl'/>
+              <Icon icon="mdi:assignment-late" className='text-6xl'/>
             </div>
               <div className='mt-7'>
-              <div className='text-6xl font-bold p-10'> 
+              <div className='text-5xl font-bold p-10'> 
                 <p>05</p>
             </div>
               </div>
@@ -190,31 +192,31 @@ const Profile = () => {
         </div>
         
       </div>
-      <div className='flex mx-10 mt-10 gap-10'>
-        <div className='w-6/12 border rounded-2xl bg-white flex flex-col justify-end'>
-          <ResponsiveContainer width="100%" height={500}>
-            <LineChart
-              width={500}
-              height={300}
-              data={data2}
-              margin={{
-                top: 5,
-                right: 30,
-                left: 20,
-                bottom: 5,
-              }}
-            >
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="name" />
-              <YAxis />
-              <Tooltip />
-              <Legend />
-              <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{ r: 8 }} />
-              <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
-            </LineChart>
-          </ResponsiveContainer>
+      <div className='graph-sec mt-16'>
+        <div className='border rounded-2xl bg-white'>
+        <ResponsiveContainer width="100%" height="100%">
+        <BarChart
+          width={500}
+          height={300}
+          data={data}
+          margin={{
+            top: 5,
+            right: 30,
+            left: 20,
+            bottom: 5,
+          }}
+          barSize={20}
+        >
+          <XAxis dataKey="name" scale="point" padding={{ left: 10, right: 10 }} />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          {/* <CartesianGrid strokeDasharray="3 3" /> */}
+          <Bar dataKey="pv" fill="#8884d8" background={{ fill: '#eee' }} />
+        </BarChart>
+      </ResponsiveContainer>
         </div>
-        <div className='w-2/6 rounded-2xl bg-white'>
+        <div className='rounded-2xl bg-white'>
           <div className=''>
             <div className='relative z-10 '>
               <h1 className='mt-5 text-2xl text-center border-b-2 pb-2'>Teachers Schedules</h1>

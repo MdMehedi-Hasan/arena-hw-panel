@@ -1,4 +1,4 @@
-.cstm{
+/* .cstm{
     width: 100%;
 	height: 500px;
     margin-top:145px;
@@ -20,4 +20,18 @@
 }
 .b-gradient{
     border-image: linear-gradient(to right, darkblue, darkorchid) 1;
+} */
+
+/* Profile card shape style above */
+
+
+.profile-card{
+    margin-left: 100px;
+    gap:76px
+}
+.graph-sec{
+    display: grid;
+    grid-template-columns: 8fr 4fr;
+    gap: 15px;
+    margin-left: 100px;
 }

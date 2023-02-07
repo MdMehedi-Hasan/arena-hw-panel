@@ -9,12 +9,14 @@ import Class from './Components/Class/Class';
 import Support from './Components/Support/Support';
 import BatchList from './Components/Student info/BatchList';
 import StudentList from './Components/Student info/StudentList';
+import Home from './Components/Home';
 
 const App = () => {
   return (
     <Routes>
       <Route path='/' element={<Base/>}>
-      <Route element={<Profile/>} index></Route>
+      <Route element={<Home/>} index></Route>
+      <Route path='/profile' element={<Profile/>}></Route>
       <Route path='/student-Info' element={<StudentInfo/>}>
         <Route element={<BatchList/>} index/>
         <Route path="/student-Info/student-list" element={<StudentList/>} />

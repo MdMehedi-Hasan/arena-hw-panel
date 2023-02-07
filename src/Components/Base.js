@@ -7,7 +7,7 @@ const Base = () => {
     return (
         <div className="drawer drawer-mobile">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-            <div className="drawer-content items-center justify-center bg-gray-100">
+            <div className="drawer-content items-center justify-center bg-white-100">
                 {/* Navbar start */}
                 <div className="navbar bg-[linear-gradient(90deg,#56b5e3,#7d58a5)]"> {/* bg-base-100 */}
                     <div className="flex-1 text-white text-4xl">

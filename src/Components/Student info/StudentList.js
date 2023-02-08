@@ -3,7 +3,7 @@ import React from 'react';
 const StudentList = () => {
     return (
         <div>
-            <div className="overflow-x-auto p-5">
+            <div className="overflow-x-auto mb-10">
                     <table className="table table-zebra w-full ">
                         <thead>
                             <tr>

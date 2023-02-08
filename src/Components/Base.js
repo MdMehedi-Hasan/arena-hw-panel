@@ -7,7 +7,7 @@ const Base = () => {
     return (
         <div className="drawer drawer-mobile">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-            <div className="drawer-content items-center justify-center bg-base-200">
+            <div className="drawer-content items-center justify-center bg-white">
                 {/* Navbar start */}
                 <div className="navbar bg-[linear-gradient(90deg,#56b5e3,#7d58a5)]"> {/* bg-base-100 */}
                     <div className="flex-1 text-white text-4xl">
@@ -39,7 +39,7 @@ const Base = () => {
 
                 {/* Page content here */}
                 <Outlet />
-                <div tabIndex="0" className='dropdown absolute top-3/4 right-3 p-4 rounded-full bg-[linear-gradient(90deg,#56b5e3,#7d58a5)] text-white text-4xl cursor-pointer'>
+                <div tabIndex="0" className='dropdown absolute top-3/4 right-5 p-4 rounded-full bg-[linear-gradient(90deg,#56b5e3,#7d58a5)] text-white text-4xl cursor-pointer'>
                     {/* <Icon icon="ri:lightbulb-flash-fill" /> */}
                     <div className="dropdown dropdown-top dropdown-end block">
                         <label tabIndex="0"><Icon className='cursor-pointer' icon="ri:lightbulb-flash-fill" /></label>
@@ -55,7 +55,7 @@ const Base = () => {
                     {/* Sidebar content here */}
                     {/* <li className='hover:bg-white-100 bg-white p-0'><Link to="/" className=' flex justify-center'><img src={logo} alt="logo" width="111px"></img></Link></li> */}
                     <li className='mt-16'><Link to="/profile"><Icon icon="material-symbols:person" /> Profile</Link></li>
-                    <li><Link to="/student-Info"><Icon icon="fluent-mdl2:work-item-bug" />Student Info</Link></li>
+                    <li><Link to="/student-info"><Icon icon="fluent-mdl2:work-item-bug" />Student Info</Link></li>
                     <li><Link to="/student-status"><Icon icon="ic:round-add-task" /> Student Status</Link></li>
                     <li><Link to="/assignments"><Icon icon="ic:round-person-add-alt" /> Assignments</Link></li>
                     <li><Link to="/class"><Icon icon="fluent:clipboard-task-list-rtl-24-filled" /> Class</Link></li>

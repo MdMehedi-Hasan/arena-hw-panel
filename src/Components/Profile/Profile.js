@@ -51,7 +51,7 @@ const Profile = () => {
   ];
   // const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
   return (
-    <div className='container mb-10'>
+    <div className='container mb-10 bg-white'>
       <div className='grid grid-cols-2 profile-card mt-16'>
         <div className='bg-[#efefef30] rounded-2xl p-10'>
           <div className=' rounded-2xl bg-white profile-content'> {/* w-full max-w-lg bg-[linear-gradient(90deg,#56b5e3,#7d58a5);]*/}
@@ -139,19 +139,19 @@ const Profile = () => {
           <div className='grid grid-cols-2 w-full h-full gap-7 justify-center'> {/* content-between */}
             <div className='h-fit w-auto max-w-xs flex flex-col items-center justify-between border rounded-3xl p-5 bg-gradient-to-r from-blue-300 to-blue-400 profile-content text-white'>
               <div className='w-full flex items-center justify-between text-2xl font-semibold'>
-                <h1>Total Batch</h1>
-                <Icon icon="mdi:file-import" className='text-6xl' />
+                <h1>Total Students</h1>
+                <Icon icon="fluent:people-community-16-filled" className='text-6xl'/>
               </div>
               <div className='mt-7'>
                 <div className='text-5xl font-bold p-10'>
-                  <p>25</p>
+                  <p>250</p>
                 </div>
               </div>
             </div>
             <div className='h-fit w-auto max-w-xs flex flex-col items-center justify-between border rounded-3xl p-5 bg-gradient-to-r from-cyan-300 to-blue-400 profile-content text-white'>
               <div className='w-full flex items-center justify-between text-2xl font-semibold'>
                 <h1>Running Batch</h1>
-                <Icon icon="mdi:file-import" className='text-6xl' />
+                <Icon icon="mingcute:classify-fill" className='text-6xl'/>
               </div>
               <div className='mt-7'>
                 <div className='text-5xl font-bold p-10'>
@@ -199,7 +199,7 @@ const Profile = () => {
       <div className='graph-sec mt-16'>
         <div className='bg-[#efefef30] rounded-2xl p-10'>
           <div className='flex flex-col justify-between h-full'>
-            <div className='border rounded-2xl bg-white h-96 profile-content pt-20'>
+            <div className='rounded-2xl bg-white h-96 profile-content pt-20'>
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart
                   width={500}

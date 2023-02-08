@@ -106,8 +106,8 @@ const StudentInfo = () => {
             </div>
             <div>
                 <div className='mx-10'>
-                    <Link to="/student-info"><button className={`btn ${location.pathname === '/student-Info/student-list' ? 'btn-accent btn-outline' : 'btn-accent'} mr-5 rounded-full text-white`}>Batch List</button></Link>
-                    <Link to="/student-Info/student-list"><button className={`btn ${location.pathname === '/student-Info' ? 'btn-accent btn-outline' : 'btn-accent'} mb-3 rounded-full text-white`}>User List</button></Link>
+                    <Link to="/student-info"><button className={`btn ${location.pathname === '/student-info/student-list' ? 'btn-accent btn-outline' : 'btn-accent'} mr-5 rounded-full text-white`}>Batch List</button></Link>
+                    <Link to="/student-info/student-list"><button className={`btn ${location.pathname === '/student-info' ? 'btn-accent btn-outline' : 'btn-accent'} mb-3 rounded-full text-white`}>User List</button></Link>
                     <hr />
                 </div>
                 <div>

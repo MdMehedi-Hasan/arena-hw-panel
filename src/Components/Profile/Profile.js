@@ -51,7 +51,7 @@ const Profile = () => {
   ];
   // const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
   return (
-    <div className='container'>
+    <div className='container mb-10'>
       <div className='grid grid-cols-2 profile-card mt-16'>
         <div className='bg-[#efefef30] rounded-2xl p-10'>
           <div className=' rounded-2xl bg-white profile-content'> {/* w-full max-w-lg bg-[linear-gradient(90deg,#56b5e3,#7d58a5);]*/}
@@ -197,28 +197,52 @@ const Profile = () => {
 
       </div>
       <div className='graph-sec mt-16'>
-        <div className='border rounded-2xl bg-white'>
-          <ResponsiveContainer width="100%" height="100%">
-            <BarChart
-              width={500}
-              height={300}
-              data={data}
-              margin={{
-                top: 5,
-                right: 30,
-                left: 20,
-                bottom: 5,
-              }}
-              barSize={20}
-            >
-              <XAxis dataKey="name" scale="point" padding={{ left: 10, right: 10 }} />
-              <YAxis />
-              <Tooltip />
-              <Legend />
-              {/* <CartesianGrid strokeDasharray="3 3" /> */}
-              <Bar dataKey="pv" fill="#8884d8" background={{ fill: '#eee' }} />
-            </BarChart>
-          </ResponsiveContainer>
+        <div className='bg-[#efefef30] rounded-2xl p-10'>
+          <div className='flex flex-col justify-between h-full'>
+            <div className='border rounded-2xl bg-white h-96 profile-content pt-20'>
+              <ResponsiveContainer width="100%" height="100%">
+                <BarChart
+                  width={500}
+                  height={300}
+                  data={data}
+                  margin={{
+                    top: 5,
+                    right: 30,
+                    left: 20,
+                    bottom: 5,
+                  }}
+                  barSize={20}
+                >
+                  <XAxis dataKey="name" scale="point" padding={{ left: 10, right: 10 }} />
+                  <YAxis />
+                  <Tooltip />
+                  <Legend />
+                  {/* <CartesianGrid strokeDasharray="3 3" /> */}
+                  <Bar dataKey="pv" fill="#8884d8" background={{ fill: '#eee' }} />
+                </BarChart>
+              </ResponsiveContainer>
+            </div>
+            <div className='grid grid-cols-2 gap-10'>
+              <div class="card bg-base-100 shadow-xl profile-content">
+                <div class="card-body">
+                  <h2 class="card-title">Total Batch</h2>
+                  <p>44</p>
+                  {/* <div class="card-actions justify-end">
+                    <button class="btn btn-primary">Buy Now</button>
+                  </div> */}
+                </div>
+              </div>
+              <div class="card bg-base-100 shadow-xl profile-content">
+                <div class="card-body">
+                  <h2 class="card-title">Total Students</h2>
+                  <p>14000</p>
+                  {/* <div class="card-actions justify-end">
+                    <button class="btn btn-primary">Buy Now</button>
+                  </div> */}
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <div className='bg-[#efefef30] rounded-2xl p-10'>
           <div className='rounded-2xl bg-white p-5 profile-content'>

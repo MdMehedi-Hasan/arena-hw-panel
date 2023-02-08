@@ -2,86 +2,99 @@ import React from 'react';
 
 const StudentStatus = () => {
     return (
-        <div>
-            <div className='grid grid-cols-3'>
-                <div className='bg-white rounded-3xl p-5 m-10'>
-                    <h1>Login</h1>
-                    <div className="form-control w-full max-w-xs">
-                        <label className="label">
-                            <span className="label-text">Pick the best fantasy franchise</span>
-                        </label>
-                        <select className="select select-bordered">
-                            <option disabled selected>Pick one</option>
-                            <option>Star Wars</option>
-                            <option>Harry Potter</option>
-                            <option>Lord of the Rings</option>
-                            <option>Planet of the Apes</option>
-                            <option>Star Trek</option>
-                        </select>
+        <div className='container pl-10'>
+            <div className='grid grid-cols-3 mt-10 gap-x-5'>
+                <div className='bg-[#efefef30] rounded-2xl p-5'>
+                    <div className='flex flex-col justify-between bg-white rounded-2xl profile-content h-full p-5'>
+                        <div className="form-control w-full max-w-xs">
+                            <h1>Login</h1>
+                            <label className="label">
+                                <span className="label-text">Pick the best fantasy franchise</span>
+                            </label>
+                            <select className="select select-bordered">
+                                <option disabled selected>Pick one</option>
+                                <option>Star Wars</option>
+                                <option>Harry Potter</option>
+                                <option>Lord of the Rings</option>
+                                <option>Planet of the Apes</option>
+                                <option>Star Trek</option>
+                            </select>
+                        </div>
+                        <div>
+                            <button type="" className='btn btn-accent mt-5'>Check Log in status</button>
+                        </div>
                     </div>
-                    <button type="" className='btn btn-accent mt-5'>Check Log in status</button>
                 </div>
-                <div className='bg-white rounded-3xl p-5 m-10'>
-                    <h1>Inactive/Assignment Unsibmitted</h1>
-                    <div className="form-control w-full max-w-xs">
-                        <label className="label">
-                            <span className="label-text">Pick the best fantasy franchise</span>
-                        </label>
-                        <select className="select select-bordered">
-                            <option disabled selected>Pick one</option>
-                            <option>Star Wars</option>
-                            <option>Harry Potter</option>
-                            <option>Lord of the Rings</option>
-                            <option>Planet of the Apes</option>
-                            <option>Star Trek</option>
-                        </select>
+                <div className='bg-[#efefef30] rounded-2xl p-5'>
+                    <div className='bg-white rounded-3xl p-5 profile-content h-full flex flex-col justify-between'>
+                        <div className="form-control w-full max-w-xs">
+                        <h1>Inactive/Assignment Unsibmitted</h1>
+                            <label className="label">
+                                <span className="label-text">Pick the best fantasy franchise</span>
+                            </label>
+                            <select className="select select-bordered">
+                                <option disabled selected>Pick one</option>
+                                <option>Star Wars</option>
+                                <option>Harry Potter</option>
+                                <option>Lord of the Rings</option>
+                                <option>Planet of the Apes</option>
+                                <option>Star Trek</option>
+                            </select>
+                        </div>
+                        <div className="form-control w-full max-w-xs">
+                            <label className="label">
+                                <span className="label-text">Pick the best fantasy franchise</span>
+                            </label>
+                            <select className="select select-bordered">
+                                <option disabled selected>Pick one</option>
+                                <option>Star Wars</option>
+                                <option>Harry Potter</option>
+                                <option>Lord of the Rings</option>
+                                <option>Planet of the Apes</option>
+                                <option>Star Trek</option>
+                            </select>
+                        </div>
+                        <div>
+                        <button type="" className='btn btn-accent mt-3'>Check Log in status</button>
+                        </div>
                     </div>
-                    <div className="form-control w-full max-w-xs">
-                        <label className="label">
-                            <span className="label-text">Pick the best fantasy franchise</span>
-                        </label>
-                        <select className="select select-bordered">
-                            <option disabled selected>Pick one</option>
-                            <option>Star Wars</option>
-                            <option>Harry Potter</option>
-                            <option>Lord of the Rings</option>
-                            <option>Planet of the Apes</option>
-                            <option>Star Trek</option>
-                        </select>
+                </div>
+                <div className='bg-[#efefef30] rounded-2xl p-5'>
+                    <div className='bg-white rounded-3xl p-5 h-full profile-content'>
+                        <h1>Atendance</h1>
+                        <div className="form-control w-full max-w-xs">
+                            <label className="label">
+                                <span className="label-text">Pick the best fantasy franchise</span>
+                            </label>
+                            <select className="select select-bordered">
+                                <option disabled selected>Pick one</option>
+                                <option>Star Wars</option>
+                                <option>Harry Potter</option>
+                                <option>Lord of the Rings</option>
+                                <option>Planet of the Apes</option>
+                                <option>Star Trek</option>
+                            </select>
+                        </div>
+                        <div className="form-control w-full max-w-xs">
+                            <label className="label">
+                                <span className="label-text">Pick the best fantasy franchise</span>
+                            </label>
+                            <select className="select select-bordered">
+                                <option disabled selected>Pick one</option>
+                                <option>Star Wars</option>
+                                <option>Harry Potter</option>
+                                <option>Lord of the Rings</option>
+                                <option>Planet of the Apes</option>
+                                <option>Star Trek</option>
+                            </select>
+                        </div>
+                        <div>
+                        <button type="" className='btn btn-accent mt-5'>Check Log in status</button>
+                        </div>
                     </div>
-                    <button type="" className='btn btn-accent mt-3'>Check Log in status</button>
-                    </div>
-                <div className='bg-white rounded-3xl p-5 m-10'>
-                    <h1>Atendance</h1>
-                    <div className="form-control w-full max-w-xs">
-                        <label className="label">
-                            <span className="label-text">Pick the best fantasy franchise</span>
-                        </label>
-                        <select className="select select-bordered">
-                            <option disabled selected>Pick one</option>
-                            <option>Star Wars</option>
-                            <option>Harry Potter</option>
-                            <option>Lord of the Rings</option>
-                            <option>Planet of the Apes</option>
-                            <option>Star Trek</option>
-                        </select>
-                    </div>
-                    <div className="form-control w-full max-w-xs">
-                        <label className="label">
-                            <span className="label-text">Pick the best fantasy franchise</span>
-                        </label>
-                        <select className="select select-bordered">
-                            <option disabled selected>Pick one</option>
-                            <option>Star Wars</option>
-                            <option>Harry Potter</option>
-                            <option>Lord of the Rings</option>
-                            <option>Planet of the Apes</option>
-                            <option>Star Trek</option>
-                        </select>
-                    </div>
-                    </div>
+                </div>
             </div>
-            <div className='m-10'>
+            <div className='mt-10'>
                 <div className="overflow-x-auto">
                     <table className="table table-zebra w-full">
                         <thead>

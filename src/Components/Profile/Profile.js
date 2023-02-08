@@ -39,7 +39,7 @@ const Profile = () => {
   return (
     <div className='container mb-10'>
       <div className='grid grid-cols-2 profile-card mt-16'>
-        <div className='bg-[#efefef30] test rounded-2xl p-10'>
+        <div className='bg-[#efefef30] rounded-2xl p-10'>
           <div className=' rounded-2xl bg-white profile-content'> {/* w-full max-w-lg bg-[linear-gradient(90deg,#56b5e3,#7d58a5);]*/}
             {/* <div className='cstm'>
                 </div> */}

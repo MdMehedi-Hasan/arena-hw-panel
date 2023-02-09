@@ -278,9 +278,9 @@ const Profile = () => {
         </div>
         <div className='bg-[#efefef30] rounded-2xl p-10 h-640px'>
           <div className='rounded-2xl bg-white p-5 profile-content h-full'> {/* h-full overflow-auto */}
-              <div className='h-full flex flex-col'>
-                <h1 className='mt-5 text-2xl text-center border-b-2 pb-2'>Course Topics</h1>
-                {/* <ul className='pl-5 py-12 mt-10'>
+            <div className='h-full flex flex-col'>
+              <h1 className='mt-5 text-2xl text-center border-b-2 pb-2'>Course Topics</h1>
+              {/* <ul className='pl-5 py-12 mt-10'>
                   <li className='flex gap-3 items-center'><div className='w-full flex items-center'><div className='w-4/12'>Full Name:</div> <div className='w-7/12'>Something jhdjhfs</div></div></li>
                   <li className='flex gap-3 items-center'><div className='w-full flex items-center'><div className='w-4/12'>Gender:</div> <div className='w-7/12'>Something jhdjhfs</div></div></li>
                   <li className='flex gap-3 items-center'><div className='w-full flex items-center'><div className='w-4/12'>Batch:</div> <div className='w-7/12'>Something jhdjhfs</div></div></li>
@@ -295,54 +295,54 @@ const Profile = () => {
                   <li className='flex gap-3 items-center'><div className='w-full flex items-center'><div className='w-4/12'>Doller Sit:</div> <div className='w-7/12'>Something jhdjhfs</div></div></li>
                   <li className='flex gap-3 items-center'><div className='w-full flex items-center'><div className='w-4/12'>Amet:</div> <div className='w-7/12'>Something jhdjhfs</div></div></li>
                 </ul> */}
-                <ul class="steps steps-vertical mt-5 overflow-auto courses">
-                  <li data-content="" class="step step-info">
-                    <div className='flex items-center text-left gap-2'>
-                      <p className='bg-cyan-400 rounded-lg px-2 py-1 text-white font-semibold'>Cyber Security & Ethical Hacking </p> <p className='text-sm w-4/12 text-right'>02/03/2000</p>
-                    </div>
-                  </li>
-                  <li data-content="" class="step step-info">
-                    <div className='flex items-center text-left gap-2'>
-                      <p className='bg-cyan-400 rounded-lg px-2 py-1 text-white font-semibold'>Cyber Security & Ethical Hacking </p> <p className='text-sm w-4/12 text-right'>02/03/2000</p>
-                    </div>
-                  </li>
-                  <li data-content="" class="step">
-                    <div className='flex items-center text-left gap-2'>
-                      <p className='bg-gray-200 rounded-lg px-2 py-1 font-semibold'>Cyber Security & Ethical Hacking </p> <p className='text-sm w-4/12 text-right'>02/03/2000</p>
-                    </div>
-                  </li>
-                  <li data-content="" class="step">
-                    <div className='flex items-center text-left gap-2'>
-                      <p className='bg-gray-200 rounded-lg px-2 py-1 font-semibold'>Cyber Security & Ethical Hacking </p> <p className='text-sm w-4/12 text-right'>02/03/2000</p>
-                    </div>
-                  </li>
-                  <li data-content="" class="step">
-                    <div className='flex items-center text-left gap-2'>
-                      <p className='bg-gray-200 rounded-lg px-2 py-1 font-semibold'>Cyber Security & Ethical Hacking </p> <p className='text-sm w-4/12 text-right'>02/03/2000</p>
-                    </div>
-                  </li>
-                  <li data-content="" class="step">
-                    <div className='flex items-center text-left gap-2'>
-                      <p className='bg-gray-200 rounded-lg px-2 py-1 font-semibold'>Cyber Security & Ethical Hacking </p> <p className='text-sm w-4/12 text-right'>02/03/2000</p>
-                    </div>
-                  </li>
-                  <li data-content="" class="step">
-                    <div className='flex items-center text-left gap-2'>
-                      <p className='bg-gray-200 rounded-lg px-2 py-1 font-semibold'>Cyber Security & Ethical Hacking </p> <p className='text-sm w-4/12 text-right'>02/03/2000</p>
-                    </div>
-                  </li>
-                  <li data-content="" class="step">
-                    <div className='flex items-center text-left gap-2'>
-                      <p className='bg-gray-200 rounded-lg px-2 py-1 font-semibold'>Cyber Security & Ethical Hacking </p> <p className='text-sm w-4/12 text-right'>02/03/2000</p>
-                    </div>
-                  </li>
-                  <li data-content="" class="step">
-                    <div className='flex items-center text-left gap-2'>
-                      <p className='bg-gray-200 rounded-lg px-2 py-1 font-semibold'>Cyber Security & Ethical Hacking </p> <p className='text-sm w-4/12 text-right'>02/03/2000</p>
-                    </div>
-                  </li>
-                </ul>
-              </div>
+              <ul class="steps steps-vertical mt-5 overflow-y-auto w-max courses">
+                <li data-content="" class="step step-info">
+                  <div className='flex items-center text-left'>
+                    <p className='bg-cyan-400 rounded-lg px-2 py-1 text-white font-semibold truncate overflow-hidden w-9/12'>Cyber Security & Ethical Hacking</p> <p className='text-sm w-3/12 text-right'>02/03/2000</p>
+                  </div>
+                </li>
+                <li data-content="" class="step step-info">
+                  <div className='flex items-center text-left'>
+                    <p className='bg-cyan-400 rounded-lg px-2 py-1 text-white font-semibold truncate overflow-hidden w-9/12'>Cyber Security & Ethical Hacking </p> <p className='text-sm w-3/12 text-right'>02/03/2000</p>
+                  </div>
+                </li>
+                <li data-content="" class="step">
+                  <div className='flex items-center text-left'>
+                    <p className='bg-gray-200 rounded-lg px-2 py-1 font-semibold truncate overflow-hidden w-9/12'>Cyber Security & Ethical Hacking </p> <p className='text-sm w-3/12 text-right'>02/03/2000</p>
+                  </div>
+                </li>
+                <li data-content="" class="step">
+                  <div className='flex items-center text-left'>
+                    <p className='bg-gray-200 rounded-lg px-2 py-1 font-semibold truncate overflow-hidden w-9/12'>Cyber Security & Ethical Hacking </p> <p className='text-sm w-3/12 text-right'>02/03/2000</p>
+                  </div>
+                </li>
+                <li data-content="" class="step">
+                  <div className='flex items-center text-left'>
+                    <p className='bg-gray-200 rounded-lg px-2 py-1 font-semibold truncate overflow-hidden w-9/12'>Cyber Security & Ethical Hacking </p> <p className='text-sm w-3/12 text-right'>02/03/2000</p>
+                  </div>
+                </li>
+                <li data-content="" class="step">
+                  <div className='flex items-center text-left'>
+                    <p className='bg-gray-200 rounded-lg px-2 py-1 font-semibold truncate overflow-hidden w-9/12'>Cyber Security & Ethical Hacking </p> <p className='text-sm w-3/12 text-right'>02/03/2000</p>
+                  </div>
+                </li>
+                <li data-content="" class="step">
+                  <div className='flex items-center text-left'>
+                    <p className='bg-gray-200 rounded-lg px-2 py-1 font-semibold truncate overflow-hidden w-9/12'>Cyber Security & Ethical Hacking </p> <p className='text-sm w-3/12 text-right'>02/03/2000</p>
+                  </div>
+                </li>
+                <li data-content="" class="step">
+                  <div className='flex items-center text-left'>
+                    <p className='bg-gray-200 rounded-lg px-2 py-1 font-semibold truncate overflow-hidden w-9/12'>Cyber Security & Ethical Hacking </p> <p className='text-sm w-3/12 text-right'>02/03/2000</p>
+                  </div>
+                </li>
+                <li data-content="" class="step">
+                  <div className='flex items-center text-left'>
+                    <p className='bg-gray-200 rounded-lg px-2 py-1 font-semibold truncate overflow-hidden w-9/12'>Cyber Security & Ethical Hacking </p> <p className='text-sm w-3/12 text-right'>02/03/2000</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>

@@ -2,32 +2,34 @@ import React from 'react';
 
 const Class = () => {
     return (
-        <div>
+        <div className='container pl-10'>
             <div className='bg-white rounded-3xl m-3 p-5'>
                 <h1 className='text-center text-4xl'>Start Class</h1>
             </div>
-            <div className='bg-white rounded-3xl m-3 p-5'>
-                <div className="form-control w-full max-w-xs">
-                    <label className="label">
-                        <span className="label-text">Pick the best fantasy franchise</span>
-                    </label>
-                    <select className="select select-bordered">
-                        <option disabled selected>Pick one</option>
-                        <option>Star Wars</option>
-                        <option>Harry Potter</option>
-                        <option>Lord of the Rings</option>
-                        <option>Planet of the Apes</option>
-                        <option>Star Trek</option>
-                    </select>
-                </div>
-                <div className='mt-5'>
-                    <button type="" className='btn btn-accent'>Activate</button>
-                    <button type="" className='btn btn-accent ml-3'>Deactivate</button>
+            <div className='bg-[#efefef30] rounded-2xl p-5'>
+                <div className='bg-white rounded-3xl m-3 p-5 profile-content'>
+                    <div className="form-control w-full max-w-xs">
+                        <label className="label">
+                            <span className="label-text">Pick the best fantasy franchise</span>
+                        </label>
+                        <select className="select select-bordered">
+                            <option disabled selected>Pick one</option>
+                            <option>Star Wars</option>
+                            <option>Harry Potter</option>
+                            <option>Lord of the Rings</option>
+                            <option>Planet of the Apes</option>
+                            <option>Star Trek</option>
+                        </select>
+                    </div>
+                    <div className='mt-5'>
+                        <button type="" className='btn btn-accent text-white'>Activate</button>
+                        <button type="" className='btn btn-accent ml-3 text-white'>Deactivate</button>
+                    </div>
                 </div>
             </div>
             <div>
-                <div className="overflow-x-auto mx-5 mt-5">
-                    <table className="table w-full">
+                <div className="overflow-x-auto mt-10">
+                    <table className="table w-full border-separate border rounded-lg">
                         <thead>
                             <tr>
                                 <th></th>

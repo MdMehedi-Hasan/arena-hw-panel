@@ -7,31 +7,75 @@ import './Profile.css'
 const Profile = () => {
   const data = [
     {
-      name: 'Batch-1',
+      name: 'B-1',
       Number: 2400,
     },
     {
-      name: 'Batch-2',
+      name: 'B-2',
       Number: 1398,
     },
     {
-      name: 'Batch-3',
-      Number: 9800,
+      name: 'B-3',
+      Number: 5800,
     },
     {
-      name: 'Batch-4',
+      name: 'B-4',
       Number: 3908,
     },
     {
-      name: 'Batch-5',
+      name: 'B-5',
       Number: 4800,
     },
     {
-      name: 'Batch-6',
+      name: 'B-6',
       Number: 3800,
     },
     {
-      name: 'Batch-7',
+      name: 'B-7',
+      Number: 4300,
+    },
+    {
+      name: 'B-8',
+      Number: 4200,
+    },
+    {
+      name: 'B-9',
+      Number: 4100,
+    },
+    {
+      name: 'B-10',
+      Number: 4500,
+    },
+    {
+      name: 'B-11',
+      Number: 4700,
+    },
+    {
+      name: 'B-12',
+      Number: 4000,
+    },
+    {
+      name: 'B-13',
+      Number: 4900,
+    },
+    {
+      name: 'B-14',
+      Number: 4100,
+    },
+    {
+      name: 'B-15',
+      Number: 5000,
+    },
+    {
+      name: 'B-16',
+      Number: 4900,
+    },
+    {
+      name: 'B-17',
+      Number: 4300,
+    },
+    {
+      name: 'B-18',
       Number: 4300,
     },
   ];
@@ -126,7 +170,7 @@ const Profile = () => {
             <div className='h-fit w-auto max-w-xs flex flex-col items-center justify-between border rounded-3xl p-5 bg-gradient-to-r from-blue-300 to-blue-400 profile-content text-white'>
               <div className='w-full flex items-center justify-between text-2xl font-semibold'>
                 <h1>Total Students</h1>
-                <Icon icon="fluent:people-community-16-filled" className='text-6xl'/>
+                <Icon icon="fluent:people-community-16-filled" className='text-6xl' />
               </div>
               <div className='mt-7'>
                 <div className='text-5xl font-bold p-10'>
@@ -137,11 +181,11 @@ const Profile = () => {
             <div className='h-fit w-auto max-w-xs flex flex-col items-center justify-between border rounded-3xl p-5 bg-gradient-to-r from-cyan-300 to-blue-400 profile-content text-white'>
               <div className='w-full flex items-center justify-between text-2xl font-semibold'>
                 <h1>Running Batch</h1>
-                <Icon icon="mingcute:classify-fill" className='text-6xl'/>
+                <Icon icon="mingcute:classify-fill" className='text-6xl' />
               </div>
               <div className='mt-7'>
                 <div className='text-5xl font-bold p-10'>
-                  <p>12</p>
+                  <p>44</p>
                 </div>
               </div>
             </div>
@@ -163,7 +207,7 @@ const Profile = () => {
               </div>
               <div className='mt-7'>
                 <div className='text-5xl font-bold p-10'>
-                  <p>250</p>
+                  <p>32</p>
                 </div>
               </div>
             </div>
@@ -184,7 +228,7 @@ const Profile = () => {
       </div>
       <div className='graph-sec mt-16'>
         <div className='bg-[#efefef30] rounded-2xl p-10'>
-          <div className='flex flex-col justify-between h-full'>
+          <div className='flex flex-col gap-10'>
             <div className='rounded-2xl bg-white h-96 profile-content pt-20'>
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart
@@ -210,32 +254,33 @@ const Profile = () => {
             </div>
             <div className='grid grid-cols-2 gap-10'>
               <div class="card bg-base-100 shadow-xl profile-content">
-                <div class="card-body">
-                  <h2 class="card-title">Total Batch</h2>
-                  <p>44</p>
+                <div class="card-body relative overflow-hidden">
+                  <h2 class="card-title font-normal">Total Batch</h2>
+                  <p className='text-4xl font-bold'>44</p>
                   {/* <div class="card-actions justify-end">
                     <button class="btn btn-primary">Buy Now</button>
                   </div> */}
+                  <div className='rounded-full bg-purple-500 w-24 h-24 absolute -right-3 -bottom-5'></div>
                 </div>
               </div>
               <div class="card bg-base-100 shadow-xl profile-content">
-                <div class="card-body">
-                  <h2 class="card-title">Total Students</h2>
-                  <p>14000</p>
+                <div class="card-body relative overflow-hidden">
+                  <h2 class="card-title font-normal">Total Students</h2>
+                  <p className='text-4xl font-bold'>14000</p>
                   {/* <div class="card-actions justify-end">
                     <button class="btn btn-primary">Buy Now</button>
                   </div> */}
+                  <div className='rounded-full bg-purple-500 w-24 h-24 absolute -right-3 -bottom-5'></div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div className='bg-[#efefef30] rounded-2xl p-10'>
-          <div className='rounded-2xl bg-white p-5 profile-content'>
-            <div className=''>
-              <div className='relative z-10 '>
-                <h1 className='mt-5 text-2xl text-center border-b-2 pb-2'>Teachers Schedules</h1>
-                <ul className='pl-5 py-12 mt-10'>
+        <div className='bg-[#efefef30] rounded-2xl p-10 h-640px'>
+          <div className='rounded-2xl bg-white p-5 profile-content h-full'> {/* h-full overflow-auto */}
+              <div className='h-full flex flex-col'>
+                <h1 className='mt-5 text-2xl text-center border-b-2 pb-2'>Course Topics</h1>
+                {/* <ul className='pl-5 py-12 mt-10'>
                   <li className='flex gap-3 items-center'><div className='w-full flex items-center'><div className='w-4/12'>Full Name:</div> <div className='w-7/12'>Something jhdjhfs</div></div></li>
                   <li className='flex gap-3 items-center'><div className='w-full flex items-center'><div className='w-4/12'>Gender:</div> <div className='w-7/12'>Something jhdjhfs</div></div></li>
                   <li className='flex gap-3 items-center'><div className='w-full flex items-center'><div className='w-4/12'>Batch:</div> <div className='w-7/12'>Something jhdjhfs</div></div></li>
@@ -249,9 +294,55 @@ const Profile = () => {
                   <li className='flex gap-3 items-center'><div className='w-full flex items-center'><div className='w-4/12'>Ipsum:</div> <div className='w-7/12'>Something jhdjhfs</div></div></li>
                   <li className='flex gap-3 items-center'><div className='w-full flex items-center'><div className='w-4/12'>Doller Sit:</div> <div className='w-7/12'>Something jhdjhfs</div></div></li>
                   <li className='flex gap-3 items-center'><div className='w-full flex items-center'><div className='w-4/12'>Amet:</div> <div className='w-7/12'>Something jhdjhfs</div></div></li>
+                </ul> */}
+                <ul class="steps steps-vertical mt-5 overflow-auto courses">
+                  <li data-content="" class="step step-info">
+                    <div className='flex items-center text-left gap-2'>
+                      <p className='bg-cyan-400 rounded-lg px-2 py-1 text-white font-semibold'>Cyber Security & Ethical Hacking </p> <p className='text-sm w-4/12 text-right'>02/03/2000</p>
+                    </div>
+                  </li>
+                  <li data-content="" class="step step-info">
+                    <div className='flex items-center text-left gap-2'>
+                      <p className='bg-cyan-400 rounded-lg px-2 py-1 text-white font-semibold'>Cyber Security & Ethical Hacking </p> <p className='text-sm w-4/12 text-right'>02/03/2000</p>
+                    </div>
+                  </li>
+                  <li data-content="" class="step">
+                    <div className='flex items-center text-left gap-2'>
+                      <p className='bg-gray-200 rounded-lg px-2 py-1 font-semibold'>Cyber Security & Ethical Hacking </p> <p className='text-sm w-4/12 text-right'>02/03/2000</p>
+                    </div>
+                  </li>
+                  <li data-content="" class="step">
+                    <div className='flex items-center text-left gap-2'>
+                      <p className='bg-gray-200 rounded-lg px-2 py-1 font-semibold'>Cyber Security & Ethical Hacking </p> <p className='text-sm w-4/12 text-right'>02/03/2000</p>
+                    </div>
+                  </li>
+                  <li data-content="" class="step">
+                    <div className='flex items-center text-left gap-2'>
+                      <p className='bg-gray-200 rounded-lg px-2 py-1 font-semibold'>Cyber Security & Ethical Hacking </p> <p className='text-sm w-4/12 text-right'>02/03/2000</p>
+                    </div>
+                  </li>
+                  <li data-content="" class="step">
+                    <div className='flex items-center text-left gap-2'>
+                      <p className='bg-gray-200 rounded-lg px-2 py-1 font-semibold'>Cyber Security & Ethical Hacking </p> <p className='text-sm w-4/12 text-right'>02/03/2000</p>
+                    </div>
+                  </li>
+                  <li data-content="" class="step">
+                    <div className='flex items-center text-left gap-2'>
+                      <p className='bg-gray-200 rounded-lg px-2 py-1 font-semibold'>Cyber Security & Ethical Hacking </p> <p className='text-sm w-4/12 text-right'>02/03/2000</p>
+                    </div>
+                  </li>
+                  <li data-content="" class="step">
+                    <div className='flex items-center text-left gap-2'>
+                      <p className='bg-gray-200 rounded-lg px-2 py-1 font-semibold'>Cyber Security & Ethical Hacking </p> <p className='text-sm w-4/12 text-right'>02/03/2000</p>
+                    </div>
+                  </li>
+                  <li data-content="" class="step">
+                    <div className='flex items-center text-left gap-2'>
+                      <p className='bg-gray-200 rounded-lg px-2 py-1 font-semibold'>Cyber Security & Ethical Hacking </p> <p className='text-sm w-4/12 text-right'>02/03/2000</p>
+                    </div>
+                  </li>
                 </ul>
               </div>
-            </div>
           </div>
         </div>
       </div>

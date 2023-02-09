@@ -5,9 +5,9 @@ const StudentStatus = () => {
         <div className='container pl-10'>
             <div className='grid grid-cols-3 mt-10 gap-x-5'>
                 <div className='bg-[#efefef30] rounded-2xl p-5'>
-                    <div className='flex flex-col justify-between bg-white rounded-2xl profile-content h-full p-5'>
-                        <div className="form-control w-full max-w-xs">
-                            <h1>Login</h1>
+                    <div className='flex flex-col justify-between bg-white rounded-2xl profile-content h-full p-5 relative'>
+                        <div className="form-control w-full max-w-xs mt-10">
+                            <h1 className='text-xl text-center absolute -top-5 bg-gradient-to-r from-sky-500 to-indigo-400 text-white rounded-full px-6 pb-1'>Login</h1>
                             <label className="label">
                                 <span className="label-text">Pick the best fantasy franchise</span>
                             </label>
@@ -21,14 +21,14 @@ const StudentStatus = () => {
                             </select>
                         </div>
                         <div>
-                            <button type="" className='btn btn-accent mt-5'>Check Log in status</button>
+                            <button type="" className='btn btn-accent mt-5 text-white'>Check Log in status</button>
                         </div>
                     </div>
                 </div>
                 <div className='bg-[#efefef30] rounded-2xl p-5'>
-                    <div className='bg-white rounded-3xl p-5 profile-content h-full flex flex-col justify-between'>
+                    <div className='bg-white rounded-2xl p-5 profile-content h-full flex flex-col justify-between relative'>
                         <div className="form-control w-full max-w-xs">
-                        <h1>Inactive/Assignment Unsibmitted</h1>
+                        <h1 className='text-xl text-center absolute -top-5 bg-gradient-to-r from-sky-500 to-indigo-400 text-white rounded-full px-5 py-1'>Inactive Student</h1> {/* Inactive/Assignment Unsibmitted */}
                             <label className="label">
                                 <span className="label-text">Pick the best fantasy franchise</span>
                             </label>
@@ -55,13 +55,13 @@ const StudentStatus = () => {
                             </select>
                         </div>
                         <div>
-                        <button type="" className='btn btn-accent mt-3'>Check Log in status</button>
+                        <button type="" className='btn btn-accent mt-3 text-white'>Check Log in status</button>
                         </div>
                     </div>
                 </div>
                 <div className='bg-[#efefef30] rounded-2xl p-5'>
-                    <div className='bg-white rounded-3xl p-5 h-full profile-content'>
-                        <h1>Atendance</h1>
+                    <div className='bg-white rounded-2xl p-5 h-full profile-content relative'>
+                        <h1 className='text-xl text-center absolute -top-5 bg-gradient-to-r from-sky-500 to-indigo-400 text-white rounded-full px-5 py-1'>Attendance</h1>
                         <div className="form-control w-full max-w-xs">
                             <label className="label">
                                 <span className="label-text">Pick the best fantasy franchise</span>
@@ -89,7 +89,7 @@ const StudentStatus = () => {
                             </select>
                         </div>
                         <div>
-                        <button type="" className='btn btn-accent mt-5'>Check Log in status</button>
+                        <button type="" className='btn btn-accent mt-5 text-white'>Check Log in status</button>
                         </div>
                     </div>
                 </div>

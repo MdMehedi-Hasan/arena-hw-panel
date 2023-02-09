@@ -2,7 +2,7 @@ import React from 'react';
 
 const Support = () => {
     return (
-        <div>
+        <div className='container'>
             <div className='bg-white rounded-3xl m-3 p-5'>
                 <div className="form-control w-full max-w-xs">
                     <label className="label">

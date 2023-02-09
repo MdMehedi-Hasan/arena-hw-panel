@@ -38,3 +38,30 @@
     gap: 15px;
     margin-left: 100px;
 }
+.steps-vertical .step:before{
+    width: 0.1rem;
+}
+.steps .step:after {
+    height: 1rem;
+    width: 1rem;
+}
+.h-640px{
+    height: 640px;
+}
+/* ::-webkit-scrollbar{
+    width:10px;
+}
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(#7C5AA6,#57B2E1);
+}
+
+::-webkit-scrollbar-corner {
+    background: #000;
+} */
+.courses::-webkit-scrollbar{
+    width:5px;
+}
+.courses::-webkit-scrollbar-thumb {
+    background: linear-gradient(#7C5AA6,#57B2E1);
+    -webkit-border-radius: 1ex;
+}

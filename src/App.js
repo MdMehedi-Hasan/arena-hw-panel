@@ -10,6 +10,8 @@ import Support from './Components/Support/Support';
 import BatchList from './Components/Student info/BatchList';
 import StudentList from './Components/Student info/StudentList';
 import Home from './Components/Home';
+import IndividualStudent from './Components/Student info/IndividualStudent';
+import NotFound from './Components/NotFound';
 
 const App = () => {
   return (
@@ -21,11 +23,13 @@ const App = () => {
         <Route element={<BatchList/>} index/>
         <Route path="/student-info/student-list" element={<StudentList/>} />
       </Route>
+      <Route path='/student-info/:userId' element={<IndividualStudent/>}></Route>
       <Route path='/student-status' element={<StudentStatus/>}></Route>
       <Route path='/assignments' element={<Assignments/>}></Route>
       <Route path='/class' element={<Class/>}></Route>
       <Route path='/support-topics' element={<Support/>}></Route>
       </Route>
+      <Route path='*' element={<NotFound/>}></Route>
     </Routes>
   );
 };

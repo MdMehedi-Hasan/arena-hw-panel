@@ -89,12 +89,12 @@ const StudentInfo = () => {
                                 </label>
                                 <input type="text" placeholder="Type here" className="input input-bordered w-full max-w-xs"/>
                             </div>
-                            <div className="form-control w-full max-w-xs">
+                            {/* <div className="form-control w-full max-w-xs">
                                 <label className="label">
                                     <span className="label-text font-semibold">Password</span>
                                 </label>
                                 <input type="text" placeholder="Type here" className="input input-bordered w-full max-w-xs" />
-                            </div>
+                            </div> */}
                         </div>
                         <button type="" className='btn btn-accent mt-5 text-white'>Create user</button>
                     </div>

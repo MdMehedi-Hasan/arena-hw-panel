@@ -9,15 +9,15 @@ const StudentStatus = () => {
                         <div className="form-control w-full max-w-xs mt-10">
                             <h1 className='text-xl text-center absolute -top-5 bg-gradient-to-r from-sky-500 to-indigo-400 text-white rounded-full px-6 pb-1'>Login</h1>
                             <label className="label">
-                                <span className="label-text">Pick the best fantasy franchise</span>
+                                <span className="label-text">Batch Name</span>
                             </label>
                             <select className="select select-bordered">
-                                <option disabled selected>Pick one</option>
-                                <option>Star Wars</option>
-                                <option>Harry Potter</option>
-                                <option>Lord of the Rings</option>
-                                <option>Planet of the Apes</option>
-                                <option>Star Trek</option>
+                                <option disabled selected>Select Batch</option>
+                                <option>AWS-45</option>
+                                <option>AWS-44</option>
+                                <option>AWS-43</option>
+                                <option>AWS-42</option>
+                                <option>AWS-41</option>
                             </select>
                         </div>
                         <div>
@@ -30,32 +30,32 @@ const StudentStatus = () => {
                         <div className="form-control w-full max-w-xs">
                         <h1 className='text-xl text-center absolute -top-5 bg-gradient-to-r from-sky-500 to-indigo-400 text-white rounded-full px-5 py-1'>Inactive Student</h1> {/* Inactive/Assignment Unsibmitted */}
                             <label className="label">
-                                <span className="label-text">Pick the best fantasy franchise</span>
+                                <span className="label-text">Batch Name</span>
                             </label>
                             <select className="select select-bordered">
-                                <option disabled selected>Pick one</option>
-                                <option>Star Wars</option>
-                                <option>Harry Potter</option>
-                                <option>Lord of the Rings</option>
-                                <option>Planet of the Apes</option>
-                                <option>Star Trek</option>
+                                <option disabled selected>Select one</option>
+                                <option>AWS-44</option>
+                                <option>AWS-45</option>
+                                <option>AWS-43</option>
+                                <option>AWS-42</option>
+                                <option>AWS-41</option>
                             </select>
                         </div>
                         <div className="form-control w-full max-w-xs">
                             <label className="label">
-                                <span className="label-text">Pick the best fantasy franchise</span>
+                                <span className="label-text">Topic List</span>
                             </label>
                             <select className="select select-bordered">
-                                <option disabled selected>Pick one</option>
-                                <option>Star Wars</option>
-                                <option>Harry Potter</option>
-                                <option>Lord of the Rings</option>
-                                <option>Planet of the Apes</option>
-                                <option>Star Trek</option>
+                                <option disabled selected>Select one</option>
+                                <option>Shell</option>
+                                <option>Hunting</option>
+                                <option>Something</option>
+                                <option>Nothing</option>
+                                <option>Anything</option>
                             </select>
                         </div>
                         <div>
-                        <button type="" className='btn btn-accent mt-3 text-white'>Check Log in status</button>
+                        <button type="" className='btn btn-accent mt-3 text-white'>Search Inactive Students</button>
                         </div>
                     </div>
                 </div>
@@ -64,32 +64,32 @@ const StudentStatus = () => {
                         <h1 className='text-xl text-center absolute -top-5 bg-gradient-to-r from-sky-500 to-indigo-400 text-white rounded-full px-5 py-1'>Attendance</h1>
                         <div className="form-control w-full max-w-xs">
                             <label className="label">
-                                <span className="label-text">Pick the best fantasy franchise</span>
+                                <span className="label-text">Batch Name</span>
                             </label>
                             <select className="select select-bordered">
-                                <option disabled selected>Pick one</option>
-                                <option>Star Wars</option>
-                                <option>Harry Potter</option>
-                                <option>Lord of the Rings</option>
-                                <option>Planet of the Apes</option>
-                                <option>Star Trek</option>
+                                <option disabled selected>Select one</option>
+                                <option>AWS-45</option>
+                                <option>AWS-44</option>
+                                <option>AWS-43</option>
+                                <option>AWS-42</option>
+                                <option>AWS-41</option>
                             </select>
                         </div>
                         <div className="form-control w-full max-w-xs">
                             <label className="label">
-                                <span className="label-text">Pick the best fantasy franchise</span>
+                                <span className="label-text">Select Date</span>
                             </label>
                             <select className="select select-bordered">
-                                <option disabled selected>Pick one</option>
-                                <option>Star Wars</option>
-                                <option>Harry Potter</option>
-                                <option>Lord of the Rings</option>
-                                <option>Planet of the Apes</option>
-                                <option>Star Trek</option>
+                                <option disabled selected>Select one</option>
+                                <option>12-01-23</option>
+                                <option>12-01-23</option>
+                                <option>12-01-23</option>
+                                <option>12-01-23</option>
+                                <option>12-01-23</option>
                             </select>
                         </div>
                         <div>
-                        <button type="" className='btn btn-accent mt-5 text-white'>Check Log in status</button>
+                        <button type="" className='btn btn-accent mt-5 text-white'>Check Attendance</button>
                         </div>
                     </div>
                 </div>

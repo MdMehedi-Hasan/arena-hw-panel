@@ -10,15 +10,15 @@ const Class = () => {
                 <div className='bg-white rounded-3xl m-3 p-5 profile-content'>
                     <div className="form-control w-full max-w-xs">
                         <label className="label">
-                            <span className="label-text">Pick the best fantasy franchise</span>
+                            <span className="label-text">Batch List</span>
                         </label>
                         <select className="select select-bordered">
-                            <option disabled selected>Pick one</option>
-                            <option>Star Wars</option>
-                            <option>Harry Potter</option>
-                            <option>Lord of the Rings</option>
-                            <option>Planet of the Apes</option>
-                            <option>Star Trek</option>
+                            <option disabled selected></option>
+                            <option>AWS-45</option>
+                            <option>AWS-44</option>
+                            <option>AWS-43</option>
+                            <option>AWS-42</option>
+                            <option>AWS-41</option>
                         </select>
                     </div>
                     <div className='mt-5'>
@@ -32,10 +32,9 @@ const Class = () => {
                     <table className="table w-full border-separate border rounded-lg">
                         <thead>
                             <tr>
-                                <th></th>
-                                <th>Name</th>
-                                <th>Job</th>
-                                <th>Favorite Color</th>
+                                <th>Running Batch</th>
+                                <th>Time</th>
+                                <th>Status</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -43,19 +42,16 @@ const Class = () => {
                                 <th>1</th>
                                 <td>Cy Ganderton</td>
                                 <td>Quality Control Specialist</td>
-                                <td>Blue</td>
                             </tr>
                             <tr>
                                 <th>2</th>
                                 <td>Hart Hagerty</td>
                                 <td>Desktop Support Technician</td>
-                                <td>Purple</td>
                             </tr>
                             <tr>
                                 <th>3</th>
                                 <td>Brice Swyre</td>
                                 <td>Tax Accountant</td>
-                                <td>Red</td>
                             </tr>
                         </tbody>
                     </table>

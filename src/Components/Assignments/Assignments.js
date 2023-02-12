@@ -5,23 +5,24 @@ const Assignments = () => {
         <div className='container pl-10 pt-10'>
             <div className='grid grid-cols-2 gap-x-10'>
                 <div className='bg-[#efefef30] rounded-2xl p-5'>
-                    <div className='bg-white rounded-3xl m-3 p-5 profile-content'>
+                    <div className='bg-white rounded-3xl m-3 p-5 profile-content relative'>
+                            <h1 className='text-xl text-center absolute -top-5 bg-gradient-to-r from-sky-500 to-indigo-400 text-white rounded-full px-5 py-2'>Assisgnment Status</h1>
                         <div className="form-control w-full max-w-xs">
                             <label className="label">
-                                <span className="label-text">Pick the best fantasy franchise</span>
+                                <span className="label-text">Batch Name</span>
                             </label>
                             <select defaultValue="Pick one" className="select select-bordered">
                                 <option disabled={true} value="Pick one">Pick one</option>
-                                <option>Star Wars</option>
-                                <option>Harry Potter</option>
-                                <option>Lord of the Rings</option>
-                                <option>Planet of the Apes</option>
-                                <option>Star Trek</option>
+                                <option>AWS-45</option>
+                                <option>AWS-44</option>
+                                <option>AWS-43</option>
+                                <option>AWS-42</option>
+                                <option>AWS-41</option>
                             </select>
                         </div>
                         <div className="form-control w-full max-w-xs">
                             <label className="label">
-                                <span className="label-text">Pick the best fantasy franchise</span>
+                                <span className="label-text">Topic List</span>
                             </label>
                             <select className="select select-bordered">
                                 <option disabled selected>Pick one</option>
@@ -35,49 +36,50 @@ const Assignments = () => {
                         <div className='flex gap-3'>
                             <label className="label justify-start">
                                 <span className="label-text">All:</span>
-                                <input type="radio" name="radio-10" className="radio checked:bg-red-500 cursor-pointer ml-2" />
+                                <input type="radio" name="radio-10" className="radio radio-primary cursor-pointer ml-2" />
                             </label>
                             <label className="label justify-start">
                                 <span className="label-text">Reviewing:</span>
-                                <input type="radio" name="radio-10" className="radio checked:bg-red-500 cursor-pointer ml-2" />
+                                <input type="radio" name="radio-10" className="radio radio-primary cursor-pointer ml-2" />
                             </label>
                             <label className="label justify-start">
-                                <span className="label-text">Active:</span>
-                                <input type="radio" name="radio-10" className="radio checked:bg-red-500 cursor-pointer ml-2" />
+                                <span className="label-text">Approved:</span>
+                                <input type="radio" name="radio-10" className="radio radio-primary cursor-pointer ml-2" />
                             </label>
                             <label className="label justify-start">
-                                <span className="label-text">Deactive:</span>
-                                <input type="radio" name="radio-10" className="radio checked:bg-red-500 cursor-pointer ml-2" />
+                                <span className="label-text">Declined:</span>
+                                <input type="radio" name="radio-10" className="radio radio-primary cursor-pointer ml-2" />
                             </label>
                         </div>
                     </div>
                 </div>
                 <div className='bg-[#efefef30] rounded-2xl p-5'>
-                    <div className='bg-white rounded-3xl m-3 p-5 profile-content'>
+                    <div className='bg-white rounded-3xl m-3 p-5 profile-content relative'>
+                    <h1 className='text-xl text-center absolute -top-5 bg-gradient-to-r from-sky-500 to-indigo-400 text-white rounded-full px-5 py-2'>Student Report</h1>
                         <div className="form-control w-full max-w-xs">
                             <label className="label">
-                                <span className="label-text">Pick the best fantasy franchise</span>
+                                <span className="label-text">Batch Name</span>
                             </label>
                             <select className="select select-bordered">
                                 <option disabled selected>Pick one</option>
-                                <option>Star Wars</option>
-                                <option>Harry Potter</option>
-                                <option>Lord of the Rings</option>
-                                <option>Planet of the Apes</option>
-                                <option>Star Trek</option>
+                                <option>AWS-45</option>
+                                <option>AWS-44</option>
+                                <option>AWS-43</option>
+                                <option>AWS-42</option>
+                                <option>AWS-41</option>
                             </select>
                         </div>
                         <div className="form-control w-full max-w-xs">
                             <label className="label">
-                                <span className="label-text">Pick the best fantasy franchise</span>
+                                <span className="label-text">Student Name</span>
                             </label>
                             <select className="select select-bordered">
                                 <option disabled selected>Pick one</option>
-                                <option>Star Wars</option>
-                                <option>Harry Potter</option>
-                                <option>Lord of the Rings</option>
-                                <option>Planet of the Apes</option>
-                                <option>Star Trek</option>
+                                <option>lal mia</option>
+                                <option>Kala chan</option>
+                                <option>Hero alam</option>
+                                <option>Bomkesh</option>
+                                <option>kaiser</option>
                             </select>
                         </div>
                         <div>

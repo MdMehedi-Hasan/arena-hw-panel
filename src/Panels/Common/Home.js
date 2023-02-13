@@ -16,7 +16,7 @@ const Home = () => {
                         <h2 className="card-title">Cyber Security & Ethical Hacking!</h2>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         <div className="card-actions justify-end">
-                            <button className="btn btn-primary">Enroll Now</button>
+                            <button className="btn btn-primary">Continue Course</button>
                         </div>
                     </div>
                 </div>
@@ -26,7 +26,7 @@ const Home = () => {
                         <h2 className="card-title">Advanced Python with Freelancing</h2>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         <div className="card-actions justify-end">
-                            <button className="btn btn-primary">Enroll Now</button>
+                            <button className="btn btn-primary">Continue Course</button>
                         </div>
                     </div>
                 </div>
@@ -36,7 +36,7 @@ const Home = () => {
                         <h2 className="card-title">Cyber Security & Advanced Python (Offer)!</h2>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         <div className="card-actions justify-end">
-                            <button className="btn btn-primary">Enroll Now</button>
+                            <button className="btn btn-primary">Continue Course</button>
                         </div>
                     </div>
                 </div>

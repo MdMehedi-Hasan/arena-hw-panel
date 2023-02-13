@@ -2,7 +2,7 @@ import { Icon } from '@iconify/react';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Bar, BarChart, CartesianGrid, Cell, Legend, Line, LineChart, Pie, PieChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
-import profile from '../Assets/profile.jpg'
+import profile from '../../../Common/Assets/profile.jpg'
 import './Profile.css'
 
 const Profile = () => {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
-import logo from '../Components/Assets/logo.svg'
+import logo from '../Common/Assets/logo.svg'
 import { Icon } from '@iconify/react';
 
 const Base = () => {
@@ -44,7 +44,7 @@ const Base = () => {
                     <div className="dropdown dropdown-top dropdown-end block">
                         <label tabIndex="0"><Icon className='cursor-pointer' icon="ri:lightbulb-flash-fill" /></label>
                         <p tabIndex="0" className="dropdown-content mb-5 menu p-2 shadow bg-base-100 rounded-box w-52 text-black text-sm">
-                        অবসর সময়ের শখের মধ্যে একটা হলো অরিগামি — কাগজ ভাঁজ করে মডেল বানানো। ম্যাসাচুসেটস ইনস্টিটিউট অফ টেকনোলজি-র এক গবেষকদল সেই অবসর সময়ের শখকেই এক অন্য মাত্রায় নিয়ে গেলেন। এক ধরণের পলিমারের সাহায্য নিয়ে তারা কাগজে এমন ব্যবস্থা করলেন যে সেটা আপনা থেকে ভাঁজ হয়ে একটা রোবটের আকার নেয়। সেই রোবটটাকে তারপর তারা চালিয়েও ফেললেন। কিভাবে করলেন তারা এটা? আপনা থেকে কাগজে ওরকম নিখুঁত ভাঁজ কিভাবে সম্ভব হলো? রোবটটাকে চালানোই বা গেল কি করে? পদার্থবিদ্যার সহজ কিছু নীতি কাজে লাগিয়েই কিন্তু সম্ভব হলো এই ম্যাজিক!
+                            অবসর সময়ের শখের মধ্যে একটা হলো অরিগামি — কাগজ ভাঁজ করে মডেল বানানো। ম্যাসাচুসেটস ইনস্টিটিউট অফ টেকনোলজি-র এক গবেষকদল সেই অবসর সময়ের শখকেই এক অন্য মাত্রায় নিয়ে গেলেন। এক ধরণের পলিমারের সাহায্য নিয়ে তারা কাগজে এমন ব্যবস্থা করলেন যে সেটা আপনা থেকে ভাঁজ হয়ে একটা রোবটের আকার নেয়। সেই রোবটটাকে তারপর তারা চালিয়েও ফেললেন। কিভাবে করলেন তারা এটা? আপনা থেকে কাগজে ওরকম নিখুঁত ভাঁজ কিভাবে সম্ভব হলো? রোবটটাকে চালানোই বা গেল কি করে? পদার্থবিদ্যার সহজ কিছু নীতি কাজে লাগিয়েই কিন্তু সম্ভব হলো এই ম্যাজিক!
                         </p>
                     </div>
                 </div>
@@ -54,12 +54,23 @@ const Base = () => {
                 <ul className="menu p-4 w-4/12 lg:w-auto bg-base-100 text-white text-lg font-semibold pt-0 bg-[linear-gradient(#56b5e3,#7d58a5)]">
                     {/* Sidebar content here */}
                     {/* <li className='hover:bg-white-100 bg-white p-0'><Link to="/" className=' flex justify-center'><img src={logo} alt="logo" width="111px"></img></Link></li> */}
-                    <li className='mt-16'><Link to="/profile"><Icon icon="material-symbols:person" /> Profile</Link></li>
-                    <li><Link to="/student-info"><Icon icon="fluent-mdl2:work-item-bug" />Student Info</Link></li>
-                    <li><Link to="/student-status"><Icon icon="ic:round-add-task" /> Student Status</Link></li>
-                    <li><Link to="/assignments"><Icon icon="ic:round-person-add-alt" /> Assignments</Link></li>
-                    <li><Link to="/class"><Icon icon="fluent:clipboard-task-list-rtl-24-filled" /> Class</Link></li>
-                    <li><Link to="/support-topics"><Icon icon="fluent:shield-task-28-filled" /> Support Topics</Link></li>
+                    <li className='text-center mb-5 border-y-2 mt-16'>For Teachers</li>
+                    <li className=''><Link to="/profile"><Icon className='text-3xl' icon="material-symbols:person" /> Profile</Link></li>
+                    <li><Link to="/student-info"><Icon className='text-3xl' icon="fluent-mdl2:work-item-bug" />Student Info</Link></li>
+                    <li><Link to="/student-status"><Icon className='text-3xl' icon="ic:round-add-task" /> Student Status</Link></li>
+                    <li><Link to="/assignments"><Icon className='text-3xl' icon="ic:round-person-add-alt" /> Assignments</Link></li>
+                    <li><Link to="/class"><Icon className='text-3xl' icon="fluent:clipboard-task-list-rtl-24-filled" /> Class</Link></li>
+                    <li><Link to="/support-topics"><Icon className='text-3xl' icon="mdi:support" /> Support Topics</Link></li>
+
+                    {/*======================================================================================
+                                            ⬇️⬇️⬇️ Specific routes for Students Only ⬇️⬇️⬇️
+                       ======================================================================================*/}
+                    <li className='text-center mt-16 mb-5 border-y-2'>For students</li>
+                    <li><Link to="/student-profile"><Icon className='text-3xl' icon="material-symbols:person" /> Profile</Link></li>
+                    <li><Link to="/submit-assignment"><Icon className='text-3xl' icon="material-symbols:assignment-rounded" /> Submit Assignment</Link></li>
+                    <li><Link to="/join-class"><Icon className='text-3xl' icon="material-symbols:menu-book" /> Join Class</Link></li>
+                    <li><Link to="/create-ticket"><Icon className='text-3xl' icon="mdi:support" /> Support Topics</Link></li>
+                    <li><Link to="/change-password"><Icon className='text-3xl' icon="mdi:password-alert" /> Change Password</Link></li>
                 </ul>
 
             </div>

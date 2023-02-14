@@ -2,18 +2,22 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import image from './Assets/login.png'
 import image1 from './Assets/man.gif'
+import shape from './Assets/graph2.png'
 
 const Login = () => {
     return (
         <div className='h-screen flex items-center justify-center bg-[linear-gradient(#56b5e3,#7d58a5)]'>
             <div className='container flex bg-[#ffffff3b] h-4/5 rounded-3xl shadow-2xl'>
                 <div className='w-full flex items-center justify-center'>
-                    <img src={image1} alt="" width="50%" />
+                    <div className='w-6/12 relative'>
+                    <img src={image1} alt="" className='relative z-50'/>
+                    <img src={shape} alt="" className='absolute top-0 bottom-0'/>
+                    </div>
                 </div>
                 <div className='flex flex-col justify-center items-center w-full bg-white rounded-r-3xl relative h-full'>
                     <div className='w-8/12'>
-                        <h1 className='text-4xl font-mono'>Hello!</h1>
-                        <h1 className='text-4xl mb-20 mt-5 font-mono'>Welcome back.</h1>
+                        <h1 className='text-3xl font-serif'>Hello!</h1>
+                        <h1 className='text-4xl mb-20 mt-5 font-serif'>Welcome back...</h1>
                     </div>
                     <div className='w-6/12'>
                         <div className='relative mb-10'>

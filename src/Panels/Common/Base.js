@@ -55,12 +55,12 @@ const Base = () => {
                     {/* Sidebar content here */}
                     {/* <li className='hover:bg-white-100 bg-white p-0'><Link to="/" className=' flex justify-center'><img src={logo} alt="logo" width="111px"></img></Link></li> */}
                     <li className='text-center mb-5 border-y-2 mt-16'>For Teachers</li>
-                    <li className=''><Link to="/profile"><Icon className='text-3xl' icon="material-symbols:person" /> Profile</Link></li>
-                    <li><Link to="/student-info"><Icon className='text-3xl' icon="fluent-mdl2:work-item-bug" />Student Info</Link></li>
-                    <li><Link to="/student-status"><Icon className='text-3xl' icon="ic:round-add-task" /> Student Status</Link></li>
-                    <li><Link to="/assignments"><Icon className='text-3xl' icon="ic:round-person-add-alt" /> Assignments</Link></li>
-                    <li><Link to="/class"><Icon className='text-3xl' icon="fluent:clipboard-task-list-rtl-24-filled" /> Class</Link></li>
-                    <li><Link to="/support-topics"><Icon className='text-3xl' icon="mdi:support" /> Support Topics</Link></li>
+                    <li className='text-md'><Link to="/profile"><Icon className='text-3xl' icon="material-symbols:person" /> Profile</Link></li>
+                    <li className='text-md'><Link to="/student-info"><Icon className='text-3xl' icon="fluent-mdl2:work-item-bug" />Student Info</Link></li>
+                    <li className='text-md'><Link to="/student-status"><Icon className='text-3xl' icon="ic:round-add-task" /> Student Status</Link></li>
+                    <li className='text-md'><Link to="/assignments"><Icon className='text-3xl' icon="ic:round-person-add-alt" /> Assignments</Link></li>
+                    <li className='text-md'><Link to="/class"><Icon className='text-3xl' icon="fluent:clipboard-task-list-rtl-24-filled" /> Class</Link></li>
+                    <li className='text-md'><Link to="/support-topics"><Icon className='text-3xl' icon="mdi:support" /> Support Topics</Link></li>
 
                     {/*======================================================================================
                                             ⬇️⬇️⬇️ Specific routes for Students Only ⬇️⬇️⬇️

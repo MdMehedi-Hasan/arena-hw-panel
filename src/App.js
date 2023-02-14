@@ -21,6 +21,7 @@ import SubmitAssignment from './Panels/Student Panel/Components/SubmitAssignment
 import JoinClass from './Panels/Student Panel/Components/JoinClass';
 import SupportTopics from './Panels/Student Panel/Components/SupportTopics';
 import ChangePassword from './Panels/Student Panel/Components/ChangePassword';
+import Login from './Panels/Common/Login';
 
 const App = () => {
   return (
@@ -53,6 +54,7 @@ const App = () => {
         <Route path='/change-password' element={<ChangePassword/>}></Route>
       </Route>
       <Route path='*' element={<NotFound/>}></Route>
+      <Route path='/login' element={<Login/>}></Route>
     </Routes>
   );
 };

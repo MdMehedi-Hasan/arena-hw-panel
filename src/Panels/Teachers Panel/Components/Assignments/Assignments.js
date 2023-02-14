@@ -3,7 +3,7 @@ import React from 'react';
 const Assignments = () => {
     return (
         <div className='container pl-10 pt-10'>
-            <div className='grid grid-cols-2 gap-x-10'>
+            <div className='grid grid-cols-3 gap-x-10'>
                 <div className='bg-[#efefef30] rounded-2xl p-5'>
                     <div className='bg-white rounded-3xl m-3 p-5 profile-content relative'>
                             <h1 className='text-xl text-center absolute -top-5 bg-gradient-to-r from-sky-500 to-indigo-400 text-white rounded-full px-5 py-2'>Assisgnment Status</h1>
@@ -84,9 +84,34 @@ const Assignments = () => {
                         </div>
                         <div>
                             <button type="" className='btn btn-accent rounded-full mt-3 text-white'>Attendance</button>
-                            <button type="" className='btn btn-accent rounded-full mt-3 mx-3 text-white'>Assignment</button>
+                            <button type="" className='btn btn-accent rounded-full mt-3 text-white'>Assignment</button>
                             <button type="" className='btn btn-accent rounded-full mt-3 text-white'>Assesment</button>
                         </div>
+                    </div>
+                </div>
+                <div className='bg-[#efefef30] rounded-2xl p-5'>
+                    <div className='bg-white rounded-3xl m-3 p-5 profile-content relative'>
+                    <h1 className='text-xl text-center absolute -top-5 bg-gradient-to-r from-sky-500 to-indigo-400 text-white rounded-full px-5 py-2'>Create Assignment</h1>
+                        <div className="form-control w-full max-w-xs">
+                            <label className="label">
+                                <span className="label-text">Batch Name</span>
+                            </label>
+                            <select className="select select-bordered">
+                                <option disabled selected>Pick one</option>
+                                <option>AWS-45</option>
+                                <option>AWS-44</option>
+                                <option>AWS-43</option>
+                                <option>AWS-42</option>
+                                <option>AWS-41</option>
+                            </select>
+                        </div>
+                        <div className="form-control w-full max-w-xs">
+                            <label className="label">
+                                <span className="label-text">Assignment Topic</span>
+                            </label>
+                            <input type="" name="" value="" className='input input-bordered'/>
+                        </div>
+                        <button type="" className='btn btn-accent rounded-full mt-3 text-white'>Create Assignment</button>
                     </div>
                 </div>
             </div>

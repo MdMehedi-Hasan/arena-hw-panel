@@ -61,6 +61,7 @@ const Base = () => {
                     <li className='text-md'><Link to="/assignments"><Icon className='text-3xl' icon="ic:round-person-add-alt" /> Assignments</Link></li>
                     <li className='text-md'><Link to="/class"><Icon className='text-3xl' icon="fluent:clipboard-task-list-rtl-24-filled" /> Class</Link></li>
                     <li className='text-md'><Link to="/support-topics"><Icon className='text-3xl' icon="mdi:support" /> Support Topics</Link></li>
+                    <li><Link to="/change-password"><Icon className='text-3xl' icon="mdi:password-alert" /> Change Password</Link></li>
 
                     {/*======================================================================================
                                             ⬇️⬇️⬇️ Specific routes for Students Only ⬇️⬇️⬇️

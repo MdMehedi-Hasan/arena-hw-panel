@@ -105,7 +105,6 @@ const Profile = () => {
                   <li className='grid grid-cols-6 items-center'><div className='col-span-5 w-full flex items-center gap-5'><div className='w-4/12 text-lg font-semibold'>Gender:</div> <div className='w-7/12'>Male</div></div> <Icon className='mr-10' icon="material-symbols:edit" /></li>
                   <li className='grid grid-cols-6 items-center'><div className='col-span-5 w-full flex items-center gap-5'><div className='w-4/12 text-lg font-semibold'>Phone Number:</div> <div className='w-7/12'>+880132502554</div></div></li>
                   <li className='grid grid-cols-6 items-center'><div className='col-span-5 w-full flex items-center gap-5'><div className='w-4/12 text-lg font-semibold'>Fb id:</div> <div className='w-7/12'>htps://something.com</div></div> <Icon className='mr-10' icon="material-symbols:edit" /></li>
-                  <li className='grid grid-cols-6 items-center'><div className='col-span-5 w-full flex items-center gap-5'><div className='w-4/12 text-lg font-semibold'>Assigned by:</div> <div className='w-7/12'>Sahriar Ifti</div></div></li>
                   <li className='grid grid-cols-6 items-center'><div className='col-span-5 w-full flex items-center gap-5'><div className='w-4/12 text-lg font-semibold'>Responsible for:</div> <div className='w-7/12'>All batches</div></div></li>
                   <li className='grid grid-cols-6 items-center'><div className='col-span-5 w-full flex items-center gap-5'><div className='w-4/12 text-lg font-semibold'>Joined:</div> <div className='w-7/12'>15 january 2023</div></div></li>
                   {/*             <li className='flex gap-3 items-center'><div className='w-full flex items-center'><div className='w-4/12'>Something:</div> <div className='w-7/12'>Something jhdjhfs</div></div> <Icon className='mr-10' icon="material-symbols:edit" /></li>
@@ -337,21 +336,21 @@ const Profile = () => {
             <div className='h-full flex flex-col'>
               <h1 className='mt-5 text-2xl text-center pb-2'>Course Topics</h1>
               <div className='border-b-2 mx-auto pb-2 flex w-auto gap-x-5'>
-                <select className="select select-bordered">
+                {/* <select className="select select-bordered">
                   <option disabled selected>Course</option>
                   <option>Homer</option>
                   <option>Marge</option>
                   <option>Bart</option>
                   <option>Lisa</option>
-                  <option>Maggie</option>
-                </select>
+                  <option>Magpie</option>
+                </select> */}
                 <select className="select select-bordered">
                   <option disabled selected>Batch</option>
                   <option>Homer</option>
                   <option>Marge</option>
                   <option>Bart</option>
                   <option>Lisa</option>
-                  <option>Maggie</option>
+                  <option>Magpie</option>
                 </select>
               </div>
               {/* <ul className='pl-5 py-12 mt-10'>

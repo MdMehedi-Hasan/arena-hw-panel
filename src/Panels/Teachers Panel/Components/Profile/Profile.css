@@ -63,6 +63,7 @@
 }
 .courses::-webkit-scrollbar-thumb {
     /* background: linear-gradient(#7C5AA6,#57B2E1); */
-    background: #A855F7;
+    /* background: #A855F7; */
+    background: #c0c0c0;
     -webkit-border-radius: 1ex;
 }

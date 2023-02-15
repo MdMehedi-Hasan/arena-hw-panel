@@ -1,14 +1,16 @@
 import { Icon } from '@iconify/react';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import profile from '../../Common/Assets/male.png';
+import 'swiper/css';
 
 const StudentProfile = () => {
-    return (
-        <div className='container mb-10'>
+  return (
+    <div className='container mb-10'>
       <div className='grid grid-cols-2 profile-card mt-16'>
-        <div className='bg-[#efefef30] rounded-2xl p-10'>
-          <div className=' rounded-2xl bg-white profile-content'>
+        <div className='bg-[#efefef30] rounded-2xl p-5'>
+          <div className=' rounded-2xl bg-white profile-content h-full'>
             <div className='flex flex-col justify-center items-center pt-20'>
               <div className="avatar placeholder mb-3">
                 <div className="bg-white text-black rounded-full w-24 ring ring-accent ring-offset-base-100 ring-offset-2">
@@ -34,115 +36,184 @@ const StudentProfile = () => {
             </div>
           </div>
         </div>
-        <div className='bg-[#efefef30] rounded-2xl p-10'>
-          <div className='grid grid-cols-3 w-full h-full gap-5 justify-center'> {/* content-between */}
-            <div className='h-fit w-auto max-w-xs flex flex-col items-center justify-between border rounded-3xl p-5 bg-gradient-to-r from-blue-300 to-blue-400 profile-content text-white'>
-              <div className='w-full flex items-center justify-between text-2xl font-semibold'>
-                <Link to="/student-info/student-list"><h1 className='text-sm hover:underline'>Total Students</h1></Link>
-                <Icon icon="fluent:people-community-16-filled" className='text-xl' />
-              </div>
-              <div className='mt-7'>
-                <div className='text-xl font-bold p-5'>
-                  <p>250</p>
-                </div>
-              </div>
+        <div className=''>
+          <div className='bg-gray-50 p-5 rounded-2xl mb-5'>
+            <div className='rounded-2xl bg-white p-5 profile-content'>
+              <h1 className='text-xl font-semibold mb-5'>Overview</h1>
+              <Swiper
+                spaceBetween={10}
+                slidesPerView={4}
+                className="w-full"
+              >
+                <SwiperSlide className=''>
+                  <div className='h-full w-auto max-w-xs flex flex-col items-center justify-between rounded-3xl p-5 bg-gradient-to-r from-blue-300 to-blue-400 text-white'>
+                    <div className='w-full flex items-center justify-between text-2xl font-semibold'>
+                      <Link to="/student-info/student-list"><h1 className='text-sm hover:underline'>Attendance</h1></Link>
+                      <Icon icon="fluent:people-community-16-filled" className='text-xl' />
+                    </div>
+                    <div className='mt-7'>
+                      <div className='text-xl font-bold p-5'>
+                        <p>250</p>
+                      </div>
+                    </div>
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className='h-fit w-auto max-w-xs flex flex-col items-center justify-between border rounded-3xl p-5 bg-gradient-to-r from-blue-300 to-blue-400 text-white'>
+                    <div className='w-full flex items-center justify-between text-2xl font-semibold'>
+                      <Link to="/student-info/student-list"><h1 className='text-sm hover:underline'>Absent</h1></Link>
+                      <Icon icon="fluent:people-community-16-filled" className='text-xl' />
+                    </div>
+                    <div className='mt-7'>
+                      <div className='text-xl font-bold p-5'>
+                        <p>250</p>
+                      </div>
+                    </div>
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className='h-fit w-auto max-w-xs flex flex-col items-center justify-between border rounded-3xl p-5 bg-gradient-to-r from-blue-300 to-blue-400 text-white'>
+                    <div className='w-full flex items-center justify-between text-2xl font-semibold'>
+                      <Link to="/student-info/student-list"><h1 className='text-sm hover:underline'>Submitted Assignment</h1></Link>
+                      <Icon icon="fluent:people-community-16-filled" className='text-xl' />
+                    </div>
+                    <div className='mt-7'>
+                      <div className='text-xl font-bold p-5'>
+                        <p>250</p>
+                      </div>
+                    </div>
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className='h-fit w-auto max-w-xs flex flex-col items-center justify-between border rounded-3xl p-5 bg-gradient-to-r from-blue-300 to-blue-400 text-white'>
+                    <div className='w-full flex items-center justify-between text-2xl font-semibold'>
+                      <Link to="/student-info/student-list"><h1 className='text-sm hover:underline'>Unsubmitted Assignment</h1></Link>
+                      <Icon icon="fluent:people-community-16-filled" className='text-xl' />
+                    </div>
+                    <div className='mt-7'>
+                      <div className='text-xl font-bold p-5'>
+                        <p>250</p>
+                      </div>
+                    </div>
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className='h-fit w-auto max-w-xs flex flex-col items-center justify-between border rounded-3xl p-5 bg-gradient-to-r from-blue-300 to-blue-400 text-white'>
+                    <div className='w-full flex items-center justify-between text-2xl font-semibold'>
+                      <Link to="/student-info/student-list"><h1 className='text-sm hover:underline'>Total Students</h1></Link>
+                      <Icon icon="fluent:people-community-16-filled" className='text-xl' />
+                    </div>
+                    <div className='mt-7'>
+                      <div className='text-xl font-bold p-5'>
+                        <p>250</p>
+                      </div>
+                    </div>
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className='h-fit w-auto max-w-xs flex flex-col items-center justify-between border rounded-3xl p-5 bg-gradient-to-r from-blue-300 to-blue-400 text-white'>
+                    <div className='w-full flex items-center justify-between text-2xl font-semibold'>
+                      <Link to="/student-info/student-list"><h1 className='text-sm hover:underline'>Total Students</h1></Link>
+                      <Icon icon="fluent:people-community-16-filled" className='text-xl' />
+                    </div>
+                    <div className='mt-7'>
+                      <div className='text-xl font-bold p-5'>
+                        <p>250</p>
+                      </div>
+                    </div>
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className='h-fit w-auto max-w-xs flex flex-col items-center justify-between border rounded-3xl p-5 bg-gradient-to-r from-blue-300 to-blue-400 text-white'>
+                    <div className='w-full flex items-center justify-between text-2xl font-semibold'>
+                      <Link to="/student-info/student-list"><h1 className='text-sm hover:underline'>Total Students</h1></Link>
+                      <Icon icon="fluent:people-community-16-filled" className='text-xl' />
+                    </div>
+                    <div className='mt-7'>
+                      <div className='text-xl font-bold p-5'>
+                        <p>250</p>
+                      </div>
+                    </div>
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className='h-fit w-auto max-w-xs flex flex-col items-center justify-between border rounded-3xl p-5 bg-gradient-to-r from-blue-300 to-blue-400 text-white'>
+                    <div className='w-full flex items-center justify-between text-2xl font-semibold'>
+                      <Link to="/student-info/student-list"><h1 className='text-sm hover:underline'>Total Students</h1></Link>
+                      <Icon icon="fluent:people-community-16-filled" className='text-xl' />
+                    </div>
+                    <div className='mt-7'>
+                      <div className='text-xl font-bold p-5'>
+                        <p>250</p>
+                      </div>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              </Swiper>
             </div>
-            <div className='h-fit w-auto max-w-xs flex flex-col items-center justify-between border rounded-3xl p-5 bg-gradient-to-r from-cyan-300 to-blue-400 profile-content text-white'>
-              <div className='w-full flex items-center justify-between text-2xl font-semibold'>
-                <h1 className='text-sm'>Running Students</h1>
-                <Icon icon="mingcute:classify-fill" className='text-xl' />
-              </div>
-              <div className='mt-7'>
-                <div className='text-xl font-bold p-5'>
-                  <p>44</p>
-                </div>
-              </div>
-            </div>
-            {/* <div className='h-fit w-auto max-w-xs flex flex-col items-center justify-between border rounded-3xl p-5 bg-white'>
-            <div className='w-full flex items-center justify-between text-2xl font-semibold'>
-              <h1>Total students</h1>
-              <Icon icon="mdi:file-import" className='text-6xl'/>
-            </div>
-              <div className='mt-3'>
-              <div className='flex items-center justify-center border-8 rounded-full text-6xl font-bold h-52 w-52'> 
-                <span>15000</span>
-            </div>
-              </div>
-          </div> */}
-            <div className='h-fit w-auto max-w-xs flex flex-col items-center justify-between border rounded-3xl p-5 bg-gradient-to-r from-green-300 to-green-400 profile-content text-white'>
-              <div className='w-full flex items-center justify-between text-2xl font-semibold'>
-                <h1 className='text-sm'>Passed Students</h1>
-                <Icon icon="ic:round-assignment" className='text-xl' />
-              </div>
-              <div className='mt-7'>
-                <div className='text-xl font-bold p-5'>
-                  <p>32</p>
-                </div>
-              </div>
-            </div>
-            <div className='h-fit w-auto max-w-xs flex flex-col items-center justify-between border rounded-3xl p-5 bg-gradient-to-r from-blue-300 to-blue-400 profile-content text-white'>
-              <div className='w-full flex items-center justify-between text-2xl font-semibold'>
-                <Link to='/student-info'><h1 className='text-sm hover:underline'>Total Batch</h1></Link>
-                <Icon icon="mdi:assignment-late" className='text-xl' />
-              </div>
-              <div className='mt-7'>
-                <div className='text-xl font-bold p-5'>
-                  <p>05</p>
-                </div>
-              </div>
-            </div>
-            <div className='h-fit w-auto max-w-xs flex flex-col items-center justify-between border rounded-3xl p-5 bg-gradient-to-r from-cyan-300 to-blue-400 profile-content text-white'>
-              <div className='w-full flex items-center justify-between text-2xl font-semibold'>
-                <h1 className='text-sm'>Running Batch</h1>
-                <Icon icon="mdi:assignment-late" className='text-xl' />
-              </div>
-              <div className='mt-7'>
-                <div className='text-xl font-bold p-5'>
-                  <p>05</p>
-                </div>
-              </div>
-            </div>
-            <div className='h-fit w-auto max-w-xs flex flex-col items-center justify-between border rounded-3xl p-5 bg-gradient-to-r from-green-300 to-green-400 profile-content text-white'>
-              <div className='w-full flex items-center justify-between text-2xl font-semibold'>
-                <h1 className='text-sm'>Completed Batch</h1>
-                <Icon icon="mdi:assignment-late" className='text-xl' />
-              </div>
-              <div className='mt-7'>
-                <div className='text-xl font-bold p-5'>
-                  <p>05</p>
-                </div>
-              </div>
-            </div>
-            <div className='h-fit w-auto max-w-xs flex flex-col items-center justify-between border rounded-3xl p-5 bg-gradient-to-r from-blue-300 to-blue-400 profile-content text-white'>
-              <div className='w-full flex items-center justify-between text-2xl font-semibold'>
-                <Link to='/assignments'><h1 className='text-sm hover:underline'>All Assignments</h1></Link>
-                <Icon icon="mdi:assignment-late" className='text-xl' />
-              </div>
-              <div className='mt-7'>
-                <div className='text-xl font-bold p-5'>
-                  <p>05</p>
-                </div>
-              </div>
-            </div>
-            <div className='h-fit w-auto max-w-xs flex flex-col items-center justify-between border rounded-3xl p-5 bg-gradient-to-r from-cyan-300 to-blue-400 profile-content text-white'>
-              <div className='w-full flex items-center justify-between text-2xl font-semibold'>
-                <h1 className='text-sm'>Pending</h1>
-                <Icon icon="mdi:assignment-late" className='text-xl' />
-              </div>
-              <div className='mt-7'>
-                <div className='text-xl font-bold p-5'>
-                  <p>05</p>
-                </div>
-              </div>
-            </div>
-            <div className='h-fit w-auto max-w-xs flex flex-col items-center justify-between border rounded-3xl p-5 bg-gradient-to-r from-green-300 to-green-400 profile-content text-white'>
-              <div className='w-full flex items-center justify-between text-2xl font-semibold'>
-                <h1 className='text-sm'>Approved</h1>
-                <Icon icon="mdi:assignment-late" className='text-xl' />
-              </div>
-              <div className='mt-7'>
-                <div className='text-xl font-bold p-5'>
-                  <p>05</p>
+          </div>
+          <div className=''>
+            <div className='bg-[#efefef30] rounded-2xl p-5 h-640px'>
+              <div className='rounded-2xl bg-white p-5 profile-content h-full'> {/* h-full overflow-auto */}
+                <div className='h-full flex flex-col'>
+                  <div className='grid grid-cols-3'>
+                    <h1 className='text-2xl font-semibold'>Course Topics</h1>
+                    <div className='flex items-center gap-2'>
+                      <div className='w-3 h-3 bg-cyan-400'></div>
+                      <span>Done</span>
+                    </div>
+                    <div className='flex items-center gap-2'>
+                      <div className='w-3 h-3 bg-gray-200'></div>
+                      <span>Undone</span>
+                    </div>
+                  </div>
+                  <ul className="steps steps-vertical mt-2 overflow-y-auto courses relative"> {/* w-max */}
+                    <li data-content="" className="step step-info">
+                      <div className='flex items-center text-left w-full overflow-x-hidden justify-between'>
+                        <p className='bg-cyan-400 rounded-lg px-2 py-1 text-white font-semibold truncate overflow-hidden w-9/12'>Cyber Security & Ethical Hacking gdfhfgjdfgjhfgjhdh hgjhgjhgjhgjgggyhgjjyygygjhgjh</p> <p className='text-sm text-right w-3/12'>02/03/2000</p>
+                      </div>
+                    </li>
+                    <li data-content="" className="step step-info">
+                      <div className='flex items-center text-left'>
+                        <p className='bg-cyan-400 rounded-lg px-2 py-1 text-white font-semibold truncate overflow-hidden w-9/12'>Cyber Security & Ethical Hacking </p> <p className='text-sm w-3/12 text-right'>02/03/2000</p>
+                      </div>
+                    </li>
+                    <li data-content="" className="step">
+                      <div className='flex items-center text-left'>
+                        <p className='bg-gray-200 rounded-lg px-2 py-1 font-semibold truncate overflow-hidden w-9/12'>Cyber Security & Ethical Hacking </p> <p className='text-sm w-3/12 text-right'>02/03/2000</p>
+                      </div>
+                    </li>
+                    <li data-content="" className="step">
+                      <div className='flex items-center text-left'>
+                        <p className='bg-gray-200 rounded-lg px-2 py-1 font-semibold truncate overflow-hidden w-9/12'>Cyber Security & Ethical Hacking </p> <p className='text-sm w-3/12 text-right'>02/03/2000</p>
+                      </div>
+                    </li>
+                    <li data-content="" className="step">
+                      <div className='flex items-center text-left'>
+                        <p className='bg-gray-200 rounded-lg px-2 py-1 font-semibold truncate overflow-hidden w-9/12'>Cyber Security & Ethical Hacking </p> <p className='text-sm w-3/12 text-right'>02/03/2000</p>
+                      </div>
+                    </li>
+                    <li data-content="" className="step">
+                      <div className='flex items-center text-left'>
+                        <p className='bg-gray-200 rounded-lg px-2 py-1 font-semibold truncate overflow-hidden w-9/12'>Cyber Security & Ethical Hacking </p> <p className='text-sm w-3/12 text-right'>02/03/2000</p>
+                      </div>
+                    </li>
+                    <li data-content="" className="step">
+                      <div className='flex items-center text-left'>
+                        <p className='bg-gray-200 rounded-lg px-2 py-1 font-semibold truncate overflow-hidden w-9/12'>Cyber Security & Ethical Hacking </p> <p className='text-sm w-3/12 text-right'>02/03/2000</p>
+                      </div>
+                    </li>
+                    <li data-content="" className="step">
+                      <div className='flex items-center text-left'>
+                        <p className='bg-gray-200 rounded-lg px-2 py-1 font-semibold truncate overflow-hidden w-9/12'>Cyber Security & Ethical Hacking </p> <p className='text-sm w-3/12 text-right'>02/03/2000</p>
+                      </div>
+                    </li>
+                    <li data-content="" className="step">
+                      <div className='flex items-center text-left'>
+                        <p className='bg-gray-200 rounded-lg px-2 py-1 font-semibold truncate overflow-hidden w-9/12'>Cyber Security & Ethical Hacking </p> <p className='text-sm w-3/12 text-right'>02/03/2000</p>
+                      </div>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -150,91 +221,8 @@ const StudentProfile = () => {
         </div>
 
       </div>
-      <div className='graph-sec mt-16'>
-        <div className='bg-[#efefef30] rounded-xl p-10'>
-          <div className='flex flex-col gap-10'>
-            
-            <div className='grid grid-cols-2 gap-10'>
-              <div className="card bg-base-100 shadow-xl profile-content">
-                <div className="card-body relative overflow-hidden">
-                  <h2 className="card-title font-normal">Total Batch</h2>
-                  <p className='text-4xl font-bold'>44</p>
-                  {/* <div className="card-actions justify-end">
-                    <button className="btn btn-primary">Buy Now</button>
-                  </div> */}
-                  <div className='rounded-full bg-purple-500 w-24 h-24 absolute -right-3 -bottom-5'></div>
-                </div>
-              </div>
-              <div className="card bg-base-100 shadow-xl profile-content">
-                <div className="card-body relative overflow-hidden">
-                  <h2 className="card-title font-normal">Total Students</h2>
-                  <p className='text-4xl font-bold'>14000</p>
-                  {/* <div className="card-actions justify-end">
-                    <button className="btn btn-primary">Buy Now</button>
-                  </div> */}
-                  <div className='rounded-full bg-purple-500 w-24 h-24 absolute -right-3 -bottom-5'></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className='bg-[#efefef30] rounded-2xl p-10 h-640px'>
-          <div className='rounded-2xl bg-white p-5 profile-content h-full'> {/* h-full overflow-auto */}
-            <div className='h-full flex flex-col'>
-              <h1 className='mt-5 border-b-2 text-2xl text-center pb-2'>Course Topics</h1>
-              <ul className="steps steps-vertical mt-5 overflow-y-auto w-max courses relative">
-                <li data-content="" className="step step-info">
-                  <div className='flex items-center text-left'>
-                    <p className='bg-cyan-400 rounded-lg px-2 py-1 text-white font-semibold truncate overflow-hidden w-9/12'>Cyber Security & Ethical Hacking</p> <p className='text-sm w-3/12 text-right'>02/03/2000</p>
-                  </div>
-                </li>
-                <li data-content="" className="step step-info">
-                  <div className='flex items-center text-left'>
-                    <p className='bg-cyan-400 rounded-lg px-2 py-1 text-white font-semibold truncate overflow-hidden w-9/12'>Cyber Security & Ethical Hacking </p> <p className='text-sm w-3/12 text-right'>02/03/2000</p>
-                  </div>
-                </li>
-                <li data-content="" className="step">
-                  <div className='flex items-center text-left'>
-                    <p className='bg-gray-200 rounded-lg px-2 py-1 font-semibold truncate overflow-hidden w-9/12'>Cyber Security & Ethical Hacking </p> <p className='text-sm w-3/12 text-right'>02/03/2000</p>
-                  </div>
-                </li>
-                <li data-content="" className="step">
-                  <div className='flex items-center text-left'>
-                    <p className='bg-gray-200 rounded-lg px-2 py-1 font-semibold truncate overflow-hidden w-9/12'>Cyber Security & Ethical Hacking </p> <p className='text-sm w-3/12 text-right'>02/03/2000</p>
-                  </div>
-                </li>
-                <li data-content="" className="step">
-                  <div className='flex items-center text-left'>
-                    <p className='bg-gray-200 rounded-lg px-2 py-1 font-semibold truncate overflow-hidden w-9/12'>Cyber Security & Ethical Hacking </p> <p className='text-sm w-3/12 text-right'>02/03/2000</p>
-                  </div>
-                </li>
-                <li data-content="" className="step">
-                  <div className='flex items-center text-left'>
-                    <p className='bg-gray-200 rounded-lg px-2 py-1 font-semibold truncate overflow-hidden w-9/12'>Cyber Security & Ethical Hacking </p> <p className='text-sm w-3/12 text-right'>02/03/2000</p>
-                  </div>
-                </li>
-                <li data-content="" className="step">
-                  <div className='flex items-center text-left'>
-                    <p className='bg-gray-200 rounded-lg px-2 py-1 font-semibold truncate overflow-hidden w-9/12'>Cyber Security & Ethical Hacking </p> <p className='text-sm w-3/12 text-right'>02/03/2000</p>
-                  </div>
-                </li>
-                <li data-content="" className="step">
-                  <div className='flex items-center text-left'>
-                    <p className='bg-gray-200 rounded-lg px-2 py-1 font-semibold truncate overflow-hidden w-9/12'>Cyber Security & Ethical Hacking </p> <p className='text-sm w-3/12 text-right'>02/03/2000</p>
-                  </div>
-                </li>
-                <li data-content="" className="step">
-                  <div className='flex items-center text-left'>
-                    <p className='bg-gray-200 rounded-lg px-2 py-1 font-semibold truncate overflow-hidden w-9/12'>Cyber Security & Ethical Hacking </p> <p className='text-sm w-3/12 text-right'>02/03/2000</p>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-    );
+  );
 };
 
 export default StudentProfile;

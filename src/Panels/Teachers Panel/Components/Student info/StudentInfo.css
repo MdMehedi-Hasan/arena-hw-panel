@@ -1,0 +1,3 @@
+input[type="text"]:focus ~ .input-text{
+    @apply transform -translate-y-6 -translate-x-4 scale-75
+}

@@ -1,0 +1,69 @@
+/* .cstm{
+    width: 100%;
+	height: 500px;
+    margin-top:145px;
+    background:transparent;
+    border-top-left-radius: 50% 50%;
+    border-top-right-radius: 50% 50%;
+    position: relative;
+    overflow: hidden;
+}
+.cstm::after{
+    content:'';
+    width:100%;
+    height:500px;
+    position:absolute;
+    top:0;
+    background:white;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+.b-gradient{
+    border-image: linear-gradient(to right, darkblue, darkorchid) 1;
+} */
+
+/* Profile card shape style above */
+
+
+.profile-card{
+    margin-left: 100px;
+    gap:76px;
+}
+.profile-content{
+    box-shadow: 0px 3px 20px 9px #c7c7c733;
+}
+.graph-sec{
+    display: grid;
+    grid-template-columns: 8fr 4fr;
+    gap: 15px;
+    margin-left: 100px;
+}
+.steps-vertical .step:before{
+    width: 0.1rem;
+}
+.steps .step:after {
+    height: 1rem;
+    width: 1rem;
+}
+.h-640px{
+    height: 640px;
+}
+/* ::-webkit-scrollbar{
+    width:10px;
+}
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(#7C5AA6,#57B2E1);
+}
+
+::-webkit-scrollbar-corner {
+    background: #000;
+} */
+.courses::-webkit-scrollbar{
+    width:5px;
+}
+.courses::-webkit-scrollbar-thumb {
+    /* background: linear-gradient(#7C5AA6,#57B2E1); */
+    /* background: #A855F7; */
+    background: #c0c0c0;
+    -webkit-border-radius: 1ex;
+}

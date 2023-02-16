@@ -53,7 +53,7 @@ const Base = () => {
             <div className="drawer-side">
                 <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                 <ul className="menu p-4 w-4/12 lg:w-auto bg-base-100 text-white text-lg font-semibold pt-0 bg-[linear-gradient(#56b5e3,#7d58a5)]">
-                    <li className=''><Link to="/" className='hover:bg-transparent focus:bg-transparent'><img src={awsLogo} alt="" className='w-44 mx-auto'/></Link></li>
+                    <li className=''><Link to="/" className='hover:bg-transparent focus:bg-transparent'><img src={awsLogo} alt="" className='w-32 mx-auto'/></Link></li>
                     {/* Sidebar content here */}
                     {/* <li className='hover:bg-white-100 bg-white p-0'><Link to="/" className=' flex justify-center'><img src={logo} alt="logo" width="111px"></img></Link></li> */}
                     <li className='text-center mb-5 border-y-2 mt-10'>For Teachers</li>

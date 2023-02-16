@@ -1,12 +1,27 @@
 import { Icon } from '@iconify/react';
+import axios from 'axios';
 import React, { useState } from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
+import ApiUrl from '../../../Common/APIUrl';
 import './StudentInfo.css'
 
 const StudentInfo = () => {
     const [batches, setBatches] = useState('')
-    console.log(batches);
     let location = useLocation();
+
+    const createBatch = ()=>{
+        let batch_name = document.getElementById('batch_name').value
+        axios.post(ApiUrl.BaseUrl+'api/batch-create/', {
+            batch_name
+          })
+          .then(function (response) {
+              setBatches(batch_name)
+              document.getElementById('batch_name').value = ''
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+    }
     return (
         <div className='container pl-10'>
             <div className='grid grid-cols-2 gap-5 my-10'>
@@ -17,8 +32,8 @@ const StudentInfo = () => {
                             <label className="label">
                                 <span className="label-text text-lg font-semibold">Batch Name</span>
                             </label>
-                            <input onBlur={(e)=>setBatches(e.target.value,e.target.value='')} type="text" placeholder="Write Batch Name" className="input input-bordered w-full max-w-xs" />
-                            <button type="" className='btn btn-accent text-white mt-3'>Create Batch</button>
+                            <input id="batch_name" type="text" placeholder="Write Batch Name" className="input input-bordered w-full max-w-xs" />
+                            <button type="" className='btn btn-accent text-white mt-3' onClick={createBatch}>Create Batch</button>
                         </div>
                         <div className="overflow-x-auto mt-14">
                             <table className="table border border-separate rounded-lg w-full">

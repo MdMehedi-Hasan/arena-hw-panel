@@ -2,12 +2,23 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import animatedImage from './Assets/man.gif'
 import shape from './Assets/graph2.png'
+import axios from 'axios';
+import ApiUrl from './APIUrl';
 
 const Login = () => {
     function login (){
         const username = document.getElementById('floating_outlined').value
         const password = document.getElementById('floating_outlined2').value
-        console.log(username,password)
+
+        axios.post(ApiUrl.BaseUrl +'api/user-login/', {
+            username,password
+          })
+          .then(function (response) {
+            console.log(response);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
     }
     return (
         <div className='h-screen flex items-center justify-center bg-[linear-gradient(#56b5e3,#7d58a5)]'>

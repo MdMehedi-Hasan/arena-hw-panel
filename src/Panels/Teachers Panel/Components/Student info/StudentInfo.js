@@ -22,7 +22,7 @@ const StudentInfo = () => {
 
     const createBatch = () => {
         let batch_name = document.getElementById('batch_name').value
-        axios.post(ApiUrl.BaseUrl + 'api/batch-create/', {batch_name})
+        axios.post(ApiUrl.BaseUrl + 'api/batch-create/', { batch_name })
             .then(function (response) {
                 setBatches(batch_name)
                 document.getElementById('batch_name').value = ''
@@ -31,31 +31,31 @@ const StudentInfo = () => {
             });
     }
 
-    const createStudent =()=>{
+    const createStudent = () => {
         let email = document.getElementsByName('email')[0].value
         let phone = document.getElementsByName('phone')[0].value
         let batch_id = document.getElementsByName('batchName')[0].value
         let course_info_id = '2'
 
-        axios.post(ApiUrl.BaseUrl+'api/create-user-student/', {
+        axios.post(ApiUrl.BaseUrl + 'api/create-user-student/', {
             email,
             phone,
             batch_id,
             course_info_id
-          })
-          .then(function (response) {
-            console.log(response);
-            document.getElementsByName('email')[0].value = ''
-            document.getElementsByName('phone')[0].value = ''
-            document.getElementsByName('batchName')[0].value = ''
-          })
-          .catch(function (error) {
-            console.log(error);
-          });
+        })
+            .then(function (response) {
+                console.log(response);
+                document.getElementsByName('email')[0].value = ''
+                document.getElementsByName('phone')[0].value = ''
+                document.getElementsByName('batchName')[0].value = ''
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
     }
     return (
         <div className='container pl-10'>
-            <div className='grid grid-cols-2 gap-5 my-10'>
+            <div className='grid grid-cols-3 gap-5 my-10'>
                 <div className='bg-[#efefef30] rounded-2xl p-5'>
                     <div className='bg-white rounded-lg p-5 profile-content h-full relative'>
                         <h1 className='text-2xl text-center absolute -top-5 bg-gradient-to-r from-sky-500 to-indigo-400 text-white rounded-full px-5 py-2'>Create New Batch</h1>
@@ -108,10 +108,10 @@ const StudentInfo = () => {
                                 <label className="label">
                                     <span className="label-text font-semibold">Select Course</span>
                                 </label>
-                                {/* <select className="select select-bordered" name="courseName">
+                                <select className="select select-bordered" name="courseName">
                                     <option disabled defaultValue='Select Batch'>Select Course</option>
                                     {batchList.map(batch => <option key={batch?.batch_id} value={batch?.batch_id} >{batch?.batch_name}</option>)}
-                                </select> */}
+                                </select>
                             </div>
                             <div className="form-control w-full max-w-xs">
                                 <label className="label">
@@ -126,13 +126,13 @@ const StudentInfo = () => {
                                 <label className="label">
                                     <span className="label-text font-semibold">Email Address</span>
                                 </label>
-                                <input type="email" placeholder="Type here" className="input input-bordered w-full max-w-xs" name="email"/>
+                                <input type="email" placeholder="Type here" className="input input-bordered w-full max-w-xs" name="email" />
                             </div>
                             <div className="form-control w-full max-w-xs">
                                 <label className="label">
                                     <span className="label-text font-semibold">Phone Number</span>
                                 </label>
-                                <input type="text" placeholder="Type here" className="input input-bordered w-full max-w-xs" name="phone"/>
+                                <input type="number" placeholder="Type here" className="input input-bordered w-full max-w-xs" name="phone" />
                             </div>
                             {/* <div className="form-control w-full max-w-xs">
                                 <label className="label">
@@ -142,6 +142,24 @@ const StudentInfo = () => {
                             </div> */}
                         </div>
                         <button type="" className='btn btn-accent mt-5 text-white' onClick={createStudent}>Create user</button>
+                    </div>
+                </div>
+                <div className='bg-[#efefef30] rounded-2xl p-5'>
+                    <div className='bg-white rounded-lg p-5 profile-content h-full relative'>
+                        <h1 className='text-2xl text-center absolute -top-5 bg-gradient-to-r from-sky-500 to-indigo-400 text-white rounded-full px-5 py-2'>Create Teacher</h1>
+                        <div className="form-control block w-full max-w-xs mt-6">
+                            <label className="label">
+                                <span className="label-text text-lg font-semibold">Email Address</span>
+                            </label>
+                            <input type="email" placeholder="teacher@gmail.com" className="input input-bordered w-full max-w-xs" />
+                        </div>
+                        <div className="form-control block w-full max-w-xs mt-6">
+                            <label className="label">
+                                <span className="label-text text-lg font-semibold">Phone Number</span>
+                            </label>
+                            <input type="number" placeholder="Enter Number" className="input input-bordered w-full max-w-xs" />
+                        </div>
+                        <button type="" className='btn btn-accent text-white mt-3' onClick={createBatch}>Create Batch</button>
                     </div>
                 </div>
             </div>

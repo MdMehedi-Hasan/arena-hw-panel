@@ -1,15 +1,61 @@
 import { Icon } from '@iconify/react';
-import React, { useState } from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
+import ApiUrl from '../../../Common/APIUrl';
 import './StudentInfo.css'
 
 const StudentInfo = () => {
     const [batches, setBatches] = useState('')
-    console.log(batches);
+    const [batchList, setBatchList] = useState([])
     let location = useLocation();
+
+    useEffect(() => {
+        axios.get(ApiUrl.BaseUrl + 'api/batch-list/')
+            .then(function (response) {
+                setBatchList(response?.data.data)
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
+    }, [])
+
+    const createBatch = () => {
+        let batch_name = document.getElementById('batch_name').value
+        axios.post(ApiUrl.BaseUrl + 'api/batch-create/', { batch_name })
+            .then(function (response) {
+                setBatches(batch_name)
+                document.getElementById('batch_name').value = ''
+            }).catch(function (error) {
+                console.log(error);
+            });
+    }
+
+    const createStudent = () => {
+        let email = document.getElementsByName('email')[0].value
+        let phone = document.getElementsByName('phone')[0].value
+        let batch_id = document.getElementsByName('batchName')[0].value
+        let course_info_id = '2'
+
+        axios.post(ApiUrl.BaseUrl + 'api/create-user-student/', {
+            email,
+            phone,
+            batch_id,
+            course_info_id
+        })
+            .then(function (response) {
+                console.log(response);
+                document.getElementsByName('email')[0].value = ''
+                document.getElementsByName('phone')[0].value = ''
+                document.getElementsByName('batchName')[0].value = ''
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }
     return (
         <div className='container pl-10'>
-            <div className='grid grid-cols-2 gap-5 my-10'>
+            <div className='grid grid-cols-3 gap-5 my-10'>
                 <div className='bg-[#efefef30] rounded-2xl p-5'>
                     <div className='bg-white rounded-lg p-5 profile-content h-full relative'>
                         <h1 className='text-2xl text-center absolute -top-5 bg-gradient-to-r from-sky-500 to-indigo-400 text-white rounded-full px-5 py-2'>Create New Batch</h1>
@@ -17,8 +63,8 @@ const StudentInfo = () => {
                             <label className="label">
                                 <span className="label-text text-lg font-semibold">Batch Name</span>
                             </label>
-                            <input onBlur={(e)=>setBatches(e.target.value,e.target.value='')} type="text" placeholder="Write Batch Name" className="input input-bordered w-full max-w-xs" />
-                            <button type="" className='btn btn-accent text-white mt-3'>Create Batch</button>
+                            <input id="batch_name" type="text" placeholder="Write Batch Name" className="input input-bordered w-full max-w-xs" />
+                            <button type="" className='btn btn-accent text-white mt-3' onClick={createBatch}>Create Batch</button>
                         </div>
                         <div className="overflow-x-auto mt-14">
                             <table className="table border border-separate rounded-lg w-full">
@@ -35,7 +81,7 @@ const StudentInfo = () => {
                                     <td>AWS Corporate</td>
                                     <td>0</td>
                                 </tr> */}
-                                {batches ? <tr><td>01</td><td>{batches}</td></tr> : <tr>
+                                    {batches ? <tr><td>01</td><td>{batches}</td></tr> : <tr>
                                         <td colSpan="4" className='text-center font-semibold'>No Batch Created yet</td>
                                     </tr>}
                                 </tbody>
@@ -60,34 +106,33 @@ const StudentInfo = () => {
                         <div className='grid grid-cols-2 gap-x-10 gap-y-3'>
                             <div className="form-control w-full max-w-xs">
                                 <label className="label">
-                                    <span className="label-text font-semibold">Full Name</span>
+                                    <span className="label-text font-semibold">Select Course</span>
                                 </label>
-                                <input type="text" placeholder="Type here" className="input input-bordered w-full max-w-xs" />
+                                <select className="select select-bordered" name="courseName">
+                                    <option disabled defaultValue='Select Batch'>Select Course</option>
+                                    {batchList.map(batch => <option key={batch?.batch_id} value={batch?.batch_id} >{batch?.batch_name}</option>)}
+                                </select>
                             </div>
                             <div className="form-control w-full max-w-xs">
                                 <label className="label">
-                                    <span className="label-text font-semibold">Batch name</span>
+                                    <span className="label-text font-semibold">Select Batch</span>
                                 </label>
-                                <select className="select select-bordered">
-                                    <option disabled selected>Select Batch</option>
-                                    <option>AWS Batch-44</option>
-                                    <option>AWS Batch-43</option>
-                                    <option>AWS Batch-42</option>
-                                    <option>AWS Batch-41</option>
-                                    <option>AWS Batch-40</option>
+                                <select className="select select-bordered" name="batchName">
+                                    <option disabled defaultValue='Select Batch'>Select Batch</option>
+                                    {batchList.map(batch => <option key={batch?.batch_id} value={batch?.batch_id}>{batch?.batch_name}</option>)}
                                 </select>
                             </div>
                             <div className="form-control w-full max-w-xs">
                                 <label className="label">
                                     <span className="label-text font-semibold">Email Address</span>
                                 </label>
-                                <input type="email" placeholder="Type here" className="input input-bordered w-full max-w-xs" />
+                                <input type="email" placeholder="Type here" className="input input-bordered w-full max-w-xs" name="email" />
                             </div>
                             <div className="form-control w-full max-w-xs">
                                 <label className="label">
                                     <span className="label-text font-semibold">Phone Number</span>
                                 </label>
-                                <input type="text" placeholder="Type here" className="input input-bordered w-full max-w-xs"/>
+                                <input type="number" placeholder="Type here" className="input input-bordered w-full max-w-xs" name="phone" />
                             </div>
                             {/* <div className="form-control w-full max-w-xs">
                                 <label className="label">
@@ -96,7 +141,25 @@ const StudentInfo = () => {
                                 <input type="text" placeholder="Type here" className="input input-bordered w-full max-w-xs" />
                             </div> */}
                         </div>
-                        <button type="" className='btn btn-accent mt-5 text-white'>Create user</button>
+                        <button type="" className='btn btn-accent mt-5 text-white' onClick={createStudent}>Create user</button>
+                    </div>
+                </div>
+                <div className='bg-[#efefef30] rounded-2xl p-5'>
+                    <div className='bg-white rounded-lg p-5 profile-content h-full relative'>
+                        <h1 className='text-2xl text-center absolute -top-5 bg-gradient-to-r from-sky-500 to-indigo-400 text-white rounded-full px-5 py-2'>Create Teacher</h1>
+                        <div className="form-control block w-full max-w-xs mt-6">
+                            <label className="label">
+                                <span className="label-text text-lg font-semibold">Email Address</span>
+                            </label>
+                            <input type="email" placeholder="teacher@gmail.com" className="input input-bordered w-full max-w-xs" />
+                        </div>
+                        <div className="form-control block w-full max-w-xs mt-6">
+                            <label className="label">
+                                <span className="label-text text-lg font-semibold">Phone Number</span>
+                            </label>
+                            <input type="number" placeholder="Enter Number" className="input input-bordered w-full max-w-xs" />
+                        </div>
+                        <button type="" className='btn btn-accent text-white mt-3' onClick={createBatch}>Create Batch</button>
                     </div>
                 </div>
             </div>
@@ -107,10 +170,10 @@ const StudentInfo = () => {
                     <hr />
                 </div> */}
                 <div className='flex justify-center'>
-                <div className='inline-flex mb-10 mt-3 border bg-gradient-to-r from-sky-400 to-indigo-400 rounded-lg overflow-hidden p-1 text-md font-semibold'>
-                    <Link to="/student-info"><p className={`px-5 py-2 ${location.pathname === '/student-info/student-list' ? 'bg-transparent text-white' : 'bg-white rounded-lg'}`}>Batch List</p></Link>
-                    <Link to="/student-info/student-list"><p className={`px-5 py-2 ${location.pathname === '/student-info' ? 'bg-transparent text-white' : 'bg-white rounded-lg'}`}>User List</p></Link>
-                </div>
+                    <div className='inline-flex mb-10 mt-3 border bg-gradient-to-r from-sky-400 to-indigo-400 rounded-lg overflow-hidden p-1 text-md font-semibold'>
+                        <Link to="/student-info"><p className={`px-5 py-2 ${location.pathname === '/student-info/student-list' ? 'bg-transparent text-white' : 'bg-white rounded-lg'}`}>Batch List</p></Link>
+                        <Link to="/student-info/student-list"><p className={`px-5 py-2 ${location.pathname === '/student-info' ? 'bg-transparent text-white' : 'bg-white rounded-lg'}`}>User List</p></Link>
+                    </div>
                 </div>
                 <div>
                     <Outlet />

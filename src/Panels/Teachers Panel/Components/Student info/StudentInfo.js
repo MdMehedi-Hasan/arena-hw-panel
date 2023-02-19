@@ -53,6 +53,20 @@ const StudentInfo = () => {
                 console.log(error);
             });
     }
+    const createTeacher = () => {
+        const email = document.getElementsByName('techerEmail')[0].value
+        const phone = document.getElementsByName('techerNumber')[0].value
+
+        axios.post(ApiUrl.BaseUrl+'api/create-user-teacher/', {email,phone})
+            .then(function (response) {
+                console.log(response);
+                document.getElementsByName('techerEmail')[0].value=''
+                document.getElementsByName('techerNumber')[0].value=''
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }
     return (
         <div className='container pl-10'>
             <div className='grid grid-cols-3 gap-5 my-10'>
@@ -151,15 +165,15 @@ const StudentInfo = () => {
                             <label className="label">
                                 <span className="label-text text-lg font-semibold">Email Address</span>
                             </label>
-                            <input type="email" placeholder="teacher@gmail.com" className="input input-bordered w-full max-w-xs" />
+                            <input name="techerEmail" type="email" placeholder="teacher@gmail.com" className="input input-bordered w-full max-w-xs" />
                         </div>
                         <div className="form-control block w-full max-w-xs mt-6">
                             <label className="label">
                                 <span className="label-text text-lg font-semibold">Phone Number</span>
                             </label>
-                            <input type="number" placeholder="Enter Number" className="input input-bordered w-full max-w-xs" />
+                            <input name="techerNumber" type="number" placeholder="Enter Number" className="input input-bordered w-full max-w-xs" />
                         </div>
-                        <button type="" className='btn btn-accent text-white mt-3' onClick={createBatch}>Create Batch</button>
+                        <button type="" className='btn btn-accent text-white mt-3' onClick={createTeacher}>Create Teacher</button>
                     </div>
                 </div>
             </div>

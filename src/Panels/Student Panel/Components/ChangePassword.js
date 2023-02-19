@@ -10,7 +10,7 @@ const ChangePassword = () => {
         const new_password = document.getElementsByName('newPassword')[0].value
         const confirm_password = document.getElementsByName('ConfirmPassword')[0].value
 
-            axios.post(ApiUrl.BaseUrl + `api/user-change-password/${userId}/`, {old_password,new_password,confirm_password})
+            axios.put(ApiUrl.BaseUrl + `api/user-change-password/${userId}/`, {old_password,new_password,confirm_password})
                 .then(function (response) {
                     console.log(response);
                     document.getElementsByName('oldPassword')[0].value = ''

@@ -1,11 +1,25 @@
 import { Icon } from '@iconify/react';
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Bar, BarChart, CartesianGrid, Cell, Legend, Line, LineChart, Pie, PieChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
+import ApiUrl from '../../../Common/APIUrl';
 import profile from '../../../Common/Assets/profile.jpg'
 import './Profile.css'
 
 const Profile = () => {
+  const [profileData,setProfileData] = useState({})
+  const userId = localStorage.getItem('id')
+  useEffect(() => {
+    axios.get(ApiUrl.BaseUrl+`api/user-profile/${userId}/`)
+      .then(function (response) {
+        console.log(response.data.data[0]);
+        setProfileData(response?.data?.data[0])
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+  }, [])
   const data = [
     {
       name: 'B-1',
@@ -94,18 +108,18 @@ const Profile = () => {
                   <img src={profile} alt="profile" />
                 </div>
               </div>
-              <h1>Sahriar hoque sumon</h1>
-              <h2>sahriarhoque@gmail.com</h2>
+              <h1>{profileData?.username}</h1>
+              <h2>{profileData?.email}</h2>
             </div>
             <div className=''>{/* cstm */}
               <div className=' '> {/* pt-16 pb-36 mt-28 ml-12 */}
                 <ul className='pl-5 py-12 mt-10 border-t-4'>
-                  <li className='grid grid-cols-6 items-center'><div className='col-span-5 w-full flex items-center gap-5'><div className='w-4/12 text-lg font-semibold'>Full Name:</div> <div className='w-7/12'>Md. Mehedi Hasan</div></div> <Icon className='mr-10' icon="material-symbols:edit" /></li>
+                  <li className='grid grid-cols-6 items-center'><div className='col-span-5 w-full flex items-center gap-5'><div className='w-4/12 text-lg font-semibold'>Full Name:</div> <div className='w-7/12'>{profileData?.fullname}</div></div> <Icon className='mr-10' icon="material-symbols:edit" /></li>
                   <li className='grid grid-cols-6 items-center'><div className='col-span-5 w-full flex items-center gap-5'><div className='w-4/12 text-lg font-semibold'>Teacher id:</div> <div className='w-7/12'>25</div></div></li>
                   <li className='grid grid-cols-6 items-center'><div className='col-span-5 w-full flex items-center gap-5'><div className='w-4/12 text-lg font-semibold'>Gender:</div> <div className='w-7/12'>Male</div></div> <Icon className='mr-10' icon="material-symbols:edit" /></li>
-                  <li className='grid grid-cols-6 items-center'><div className='col-span-5 w-full flex items-center gap-5'><div className='w-4/12 text-lg font-semibold'>Phone Number:</div> <div className='w-7/12'>+880132502554</div></div></li>
+                  <li className='grid grid-cols-6 items-center'><div className='col-span-5 w-full flex items-center gap-5'><div className='w-4/12 text-lg font-semibold'>Number:</div> <div className='w-7/12'>+880132502554</div></div></li>
                   <li className='grid grid-cols-6 items-center'><div className='col-span-5 w-full flex items-center gap-5'><div className='w-4/12 text-lg font-semibold'>Fb id:</div> <div className='w-7/12'>htps://something.com</div></div> <Icon className='mr-10' icon="material-symbols:edit" /></li>
-                  <li className='grid grid-cols-6 items-center'><div className='col-span-5 w-full flex items-center gap-5'><div className='w-4/12 text-lg font-semibold'>Responsible for:</div> <div className='w-7/12'>All batches</div></div></li>
+                  {/* <li className='grid grid-cols-6 items-center'><div className='col-span-5 w-full flex items-center gap-5'><div className='w-4/12 text-lg font-semibold'>Responsible for:</div> <div className='w-7/12'>All batches</div></div></li> */}
                   <li className='grid grid-cols-6 items-center'><div className='col-span-5 w-full flex items-center gap-5'><div className='w-4/12 text-lg font-semibold'>Joined:</div> <div className='w-7/12'>15 january 2023</div></div></li>
                   {/*             <li className='flex gap-3 items-center'><div className='w-full flex items-center'><div className='w-4/12'>Something:</div> <div className='w-7/12'>Something jhdjhfs</div></div> <Icon className='mr-10' icon="material-symbols:edit" /></li>
                 <li className='flex gap-3 items-center'><div className='w-full flex items-center'><div className='w-4/12'>Demo:</div> <div className='w-7/12'>Something jhdjhfs</div></div> <Icon className='mr-10' icon="material-symbols:edit" /></li>
@@ -367,8 +381,8 @@ const Profile = () => {
                   <li className='flex gap-3 items-center'><div className='w-full flex items-center'><div className='w-4/12'>Ipsum:</div> <div className='w-7/12'>Something jhdjhfs</div></div></li>
                   <li className='flex gap-3 items-center'><div className='w-full flex items-center'><div className='w-4/12'>Doller Sit:</div> <div className='w-7/12'>Something jhdjhfs</div></div></li>
                   <li className='flex gap-3 items-center'><div className='w-full flex items-center'><div className='w-4/12'>Amet:</div> <div className='w-7/12'>Something jhdjhfs</div></div></li>
-                </ul> */}                  
-                
+                </ul> */}
+
               <ul className="steps steps-vertical mt-5 overflow-y-auto w-max courses relative">
                 <li data-content="" className="step step-info">
                   <div className='flex items-center text-left'>

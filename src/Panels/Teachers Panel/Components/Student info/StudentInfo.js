@@ -9,6 +9,7 @@ const StudentInfo = () => {
     const [batches, setBatches] = useState('')
     const [batchList, setBatchList] = useState([])
     let location = useLocation();
+    console.log(batchList);
 
     useEffect(() => {
         axios.get(ApiUrl.BaseUrl + 'api/batch-list/')
@@ -190,7 +191,7 @@ const StudentInfo = () => {
                     </div>
                 </div>
                 <div>
-                    <Outlet />
+                    <Outlet/>
                 </div>
             </div>
         </div>

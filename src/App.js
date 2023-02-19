@@ -22,6 +22,9 @@ import JoinClass from './Panels/Student Panel/Components/JoinClass';
 import SupportTopics from './Panels/Student Panel/Components/SupportTopics';
 import ChangePassword from './Panels/Student Panel/Components/ChangePassword';
 import Login from './Panels/Common/Login';
+import ForgetPassword from './Panels/Common/ForgetPassword';
+import OtpVerfication from './Panels/Common/OtpVerfication';
+import NewPassword from './Panels/Common/NewPassword';
 
 const App = () => {
   return (
@@ -55,6 +58,9 @@ const App = () => {
       </Route>
       <Route path='*' element={<NotFound/>}></Route>
       <Route path='/login' element={<Login/>}></Route>
+      <Route path='/forget-password' element={<ForgetPassword/>}></Route>
+      <Route path='/otp-verification' element={<OtpVerfication/>}></Route>
+      <Route path='/new-password' element={<NewPassword/>}></Route>
     </Routes>
   );
 };

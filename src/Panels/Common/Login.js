@@ -14,7 +14,8 @@ const Login = () => {
             username,password
           })
           .then(function (response) {
-            console.log(response);
+            console.log(response.data.data);
+            localStorage.setItem('id',response.data.data.user_id)
           })
           .catch(function (error) {
             console.log(error);
@@ -43,7 +44,7 @@ const Login = () => {
                             <input autoComplete='new-password' type="password" id="floating_outlined2" className="block px-2 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent border-b-2 border-b-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
                             <label htmlFor="floating_outlined2" className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-900 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4">Password</label>
                         </div>
-                        <Link to="/login"><p className='text-right mt-2'>forget password?</p></Link>
+                        <Link to="/forget-password"><p className='text-right mt-2'>forget password?</p></Link>
                         <button type="" className='btn btn-accent w-full mt-20 text-white' onClick={login}>Login</button>
                     </div>
                     <div className="dropdown dropdown-top dropdown-end absolute bottom-5 right-5 cursor-pointer">

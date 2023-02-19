@@ -14,7 +14,8 @@ const Login = () => {
             username,password
           })
           .then(function (response) {
-            console.log(response);
+            console.log(response.data.data);
+            localStorage.setItem('id',response.data.data.user_id)
           })
           .catch(function (error) {
             console.log(error);

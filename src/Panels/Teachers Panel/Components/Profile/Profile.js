@@ -14,12 +14,13 @@ const Profile = () => {
   const [isgender, setIsGender] = useState(false)
   const [isfbId, setIsfbId] = useState(false)
 
-  const [profileData, setProfileData] = useState({})
+  const [name, setName] = useState('')
   const [gender, setGender] = useState('')
   const [fbId, setFbId] = useState('')
-  const userId = localStorage.getItem('id')
   const linkCheck = new RegExp("^(http|https)://")
-  console.log(fbId,linkCheck.test(fbId));
+
+  const [profileData, setProfileData] = useState({})
+  const userId = localStorage.getItem('id')
 
   useEffect(() => {
     axios.get(ApiUrl.BaseUrl + `api/user-profile/${userId}/`)
@@ -31,20 +32,31 @@ const Profile = () => {
       })
   }, [])
 
-  const openModal = () => {
-    // console.log(gender.length);
-    const genders = document.getElementsByName('gender')
+  const openModal = (peram) => {
+    if(peram === 'name'){
+      document.getElementById('name-modal').checked = true
+      console.log("i am name");
+    }
+    else if(peram === 'gender'){
+      document.getElementById('gender-modal').checked = true
+      console.log('i am gender');
+    }
+    else if(peram === 'link'){
+      document.getElementById('link-modal').checked = true
+      console.log('i am link');
+    }
+    /* const genders = document.getElementsByName('gender')
     for (let i = 0; i < genders.length; i++) {
       if (genders[i].checked) {
         document.getElementById('gender-modal').checked = true
         // setGender(genders[i].value)
         break
       }
-      else{
+      else {
         // setGender('')
         toast("You haven't selected any gender")
       }
-    }
+    } */
     /* if(genderrr){
       document.getElementById('gender-modal').checked = true
     }
@@ -152,11 +164,11 @@ const Profile = () => {
             <div className=''>{/* cstm */}
               <div className=' '> {/* pt-16 pb-36 mt-28 ml-12 */}
                 <ul className='pl-5 py-12 mt-10 border-t-4'>
-                  <li className='grid grid-cols-6 items-center'><div className='col-span-5 w-full flex items-center gap-5'><div className='w-4/12 text-lg font-semibold'>Full Name:</div> {isfullName ? <div className='flex border rounded-lg'><input type="text" placeholder="Type here" className="input w-full max-w-xs focus:outline-0" /> <button type="" className='btn btn-accent rounded-l-none'><Icon icon="material-symbols:save" className='text-white text-2xl' /></button></div> : <div className='w-7/12'>{profileData?.fullname}</div>}</div> {isfullName ? <Icon icon="radix-icons:cross-2" className='mr-10 cursor-pointer' onClick={() => setIsfullName(false)} /> : <Icon className='mr-10 cursor-pointer' icon="material-symbols:edit" onClick={() => setIsfullName(true)} />}</li>
+                  <li className='grid grid-cols-6 items-center'><div className='col-span-5 w-full flex items-center gap-5'><div className='w-4/12 text-lg font-semibold'>Full Name:</div> {isfullName ? <div className={`flex border rounded-lg ${name ? '' : 'focus-within:border-red-400'}`}><input type="text" placeholder="Type here" className="input w-full max-w-xs focus:outline-0" onChange={(e) => setName(e.target.value)} /> <button type="" className={`btn rounded-l-none ${name ? 'btn-accent' : 'btn-disabled'}`} onClick={()=>openModal('name')}><Icon icon="material-symbols:save" className='text-white text-2xl' /></button></div> : <div className='w-7/12'>{profileData?.fullname}</div>}</div> {isfullName ? <Icon icon="radix-icons:cross-2" className='mr-10 cursor-pointer' onClick={() => setIsfullName(false)} /> : <Icon className='mr-10 cursor-pointer' icon="material-symbols:edit" onClick={() => setIsfullName(true)} />}</li>
                   <li className='grid grid-cols-6 items-center'><div className='col-span-5 w-full flex items-center gap-5'><div className='w-4/12 text-lg font-semibold'>Teacher id:</div> <div className='w-7/12'>25</div></div></li>
-                  <li className='grid grid-cols-6 items-center'><div className='col-span-5 w-full flex items-center gap-5'><div className='w-4/12 text-lg font-semibold'>Gender:</div><div className='flex items-center gap-5'><label>Male</label><input type="radio" name="gender" className="radio radio-success" value="2" /><label >Female</label><input type="radio" name="gender" className="radio radio-success" value="1" /></div></div>{isgender ? <Icon icon="material-symbols:save" className='mr-10 cursor-pointer text-xl' onClick={openModal} /> : <Icon className='mr-10 cursor-pointer' icon="material-symbols:edit" onClick={() => setIsGender(true)} />}</li>{/* {isgender? <div className='flex border rounded-lg'><input type="text" placeholder="Type here" className="input w-full max-w-xs focus:outline-0" /> <button type="" className='btn btn-accent rounded-l-none'><Icon icon="material-symbols:save" className='text-white text-2xl'/></button></div> : <div className='w-7/12'>{profileData?.genders}</div>}</div> {isgender? <Icon icon="radix-icons:cross-2" className='mr-10 cursor-pointer' onClick={()=>setIsGender(false)}/> : <Icon className='mr-10 cursor-pointer' icon="material-symbols:edit" onClick={()=>setIsGender(true)}/>} */}
+                  <li className='grid grid-cols-6 items-center'><div className='col-span-5 w-full flex items-center gap-5'><div className='w-4/12 text-lg font-semibold'>Gender:</div><div className='flex items-center gap-5'><label>Male</label><input type="radio" name="gender" className="radio radio-success" value="2" /><label >Female</label><input type="radio" name="gender" className="radio radio-success" value="1" /></div></div>{isgender ? <Icon icon="material-symbols:save" className='mr-10 cursor-pointer text-xl' onClick={()=>openModal('gender')} /> : <Icon className='mr-10 cursor-pointer' icon="material-symbols:edit" onClick={() => setIsGender(true)} />}</li>{/* {isgender? <div className='flex border rounded-lg'><input type="text" placeholder="Type here" className="input w-full max-w-xs focus:outline-0" /> <button type="" className='btn btn-accent rounded-l-none'><Icon icon="material-symbols:save" className='text-white text-2xl'/></button></div> : <div className='w-7/12'>{profileData?.genders}</div>}</div> {isgender? <Icon icon="radix-icons:cross-2" className='mr-10 cursor-pointer' onClick={()=>setIsGender(false)}/> : <Icon className='mr-10 cursor-pointer' icon="material-symbols:edit" onClick={()=>setIsGender(true)}/>} */}
                   <li className='grid grid-cols-6 items-center'><div className='col-span-5 w-full flex items-center gap-5'><div className='w-4/12 text-lg font-semibold'>Number:</div> <div className='w-7/12'>{profileData?.phone}</div></div></li>
-                  <li className='grid grid-cols-6 items-center'><div className='col-span-5 w-full flex items-center gap-5'><div className='w-4/12 text-lg font-semibold'>Fb id:</div> {isfbId ? <div className={`flex border rounded-lg ${linkCheck.test(fbId) ? '' : 'focus-within:border-red-400'}`}><input onChange={(e)=>setFbId(e.target.value)} type="text" placeholder="https://facebook.com" className="input w-full max-w-xs focus:outline-0" /> <button type="" className={`btn rounded-l-none ${linkCheck.test(fbId) ? 'btn-accent' : 'btn-disabled'}`}><Icon icon="material-symbols:save" className='text-white text-2xl' /></button></div> : <div className='w-7/12'>{profileData?.fb_id_link}</div>}</div> {isfbId ? <Icon icon="radix-icons:cross-2" className='mr-10 cursor-pointer' onClick={() => setIsfbId(false)} /> : <Icon className='mr-10 cursor-pointer' icon="material-symbols:edit" onClick={() => setIsfbId(true)} />}</li>
+                  <li className='grid grid-cols-6 items-center'><div className='col-span-5 w-full flex items-center gap-5'><div className='w-4/12 text-lg font-semibold'>Fb id:</div> {isfbId ? <div className={`flex border rounded-lg ${linkCheck.test(fbId) ? '' : 'focus-within:border-red-400'}`}><input onChange={(e) => setFbId(e.target.value)} type="text" placeholder="https://facebook.com" className="input w-full max-w-xs focus:outline-0" /> <button type="" className={`btn rounded-l-none ${linkCheck.test(fbId) ? 'btn-accent' : 'btn-disabled'}`} onClick={()=>openModal('link')}><Icon icon="material-symbols:save" className='text-white text-2xl' /></button></div> : <div className='w-7/12'>{profileData?.fb_id_link}</div>}</div> {isfbId ? <Icon icon="radix-icons:cross-2" className='mr-10 cursor-pointer' onClick={() => setIsfbId(false)} /> : <Icon className='mr-10 cursor-pointer' icon="material-symbols:edit" onClick={() => setIsfbId(true)} />}</li>
                   {/* <li className='grid grid-cols-6 items-center'><div className='col-span-5 w-full flex items-center gap-5'><div className='w-4/12 text-lg font-semibold'>Responsible for:</div> <div className='w-7/12'>All batches</div></div></li> */}
                   <li className='grid grid-cols-6 items-center'><div className='col-span-5 w-full flex items-center gap-5'><div className='w-4/12 text-lg font-semibold'>Joined:</div> <div className='w-7/12'>{profileData?.joined}</div></div></li>
                   {/*             <li className='flex gap-3 items-center'><div className='w-full flex items-center'><div className='w-4/12'>Something:</div> <div className='w-7/12'>Something jhdjhfs</div></div> <Icon className='mr-10' icon="material-symbols:edit" /></li>
@@ -169,6 +181,17 @@ const Profile = () => {
                 </ul>
               </div>
             </div>
+            {/* Full Name modal */}
+            <input type="checkbox" id="name-modal" className="modal-toggle" />
+            <div className="modal">
+              <div className="modal-box">
+                <h3 className="font-bold text-lg">Congratulations random Internet user!</h3>
+                <p className="py-4">You've been selected for a chance to get one year of subscription to use Wikipedia for free!</p>
+                <div className="modal-action">
+                  <label htmlFor="name-modal" className="btn">Submit</label>
+                </div>
+              </div>
+            </div>
             {/* Gender modal */}
             <input type="checkbox" id="gender-modal" className="modal-toggle" />
             <div className="modal">
@@ -179,6 +202,17 @@ const Profile = () => {
                 <div className="modal-action">
                   <label htmlFor="gender-modal" className="btn btn-error text-white">Close</label>
                   <label htmlFor="gender-modal" className="btn btn-accent text-white" onClick={updateProfile}>Change gender</label>
+                </div>
+              </div>
+            </div>
+            {/*  */}
+            <input type="checkbox" id="link-modal" className="modal-toggle" />
+            <div className="modal">
+              <div className="modal-box">
+                <h3 className="font-bold text-lg">Congratulations random Internet user!</h3>
+                <p className="py-4">You've been selected for a chance to get one year of subscription to use Wikipedia for free!</p>
+                <div className="modal-action">
+                  <label htmlFor="link-modal" className="btn">Submit</label>
                 </div>
               </div>
             </div>

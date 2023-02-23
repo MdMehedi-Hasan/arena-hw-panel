@@ -1,26 +1,47 @@
 import axios from 'axios';
 import React from 'react';
-import shape from '../Common/Assets/graph2.png'
+import { useNavigate } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
+import shape from '../Common/Assets/blob.svg'
 import ApiUrl from './APIUrl';
+import image from './Assets/forget.png'
+import 'react-toastify/dist/ReactToastify.css';
 
 const ForgetPassword = () => {
+    const navigate = useNavigate();
     const checkEmail = () => {
-        const email = document.getElementById('floating_outlined').value
+        const email = document.getElementById('floating_outlined').value;
 
-        axios.post(ApiUrl.BaseUrl+'api/send-email-otp-for-forget-password/', {email})
-            .then(function (response) {
-                console.log(response);
+        if (!email) {
+            toast.error('Email is Required!',{
+                position: "top-center",
+                theme: "colored",
             })
-            .catch(function (error) {
-                console.log(error);
-            });
+        }
+        else {
+            axios.post(ApiUrl.BaseUrl + 'api/send-email-otp-for-forget-password/', { email })
+                .then(function (response) {
+                    console.log(response);
+                    if (response.status === 200) {
+                        navigate('/otp-verification')
+                    }
+                })
+                .catch(function (error) {
+                    console.log(error);
+                    toast.error('Email does not match! Make sure you entered a right email.',{
+                        position: "top-center",
+                        theme: "colored",
+                    })
+                });
+        }
     }
     return (
         <div className='h-screen flex items-center justify-center bg-[linear-gradient(#56b5e3,#7d58a5)]'>
+            <ToastContainer />
             <div className='container flex bg-[#ffffff3b] h-4/5 rounded-3xl shadow-2xl'>
                 <div className='w-full flex items-center justify-center'>
-                    <div className='w-6/12 relative'>
-                        {/* <img src={animatedImage} alt="" className='relative z-50' /> */}
+                    <div className='w-8/12 relative'>
+                        <img src={image} alt="" className='relative z-50' />
                         <img src={shape} alt="" className='absolute top-0 bottom-0' />
                     </div>
                 </div>

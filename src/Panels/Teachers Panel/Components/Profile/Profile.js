@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import { Bar, BarChart, CartesianGrid, Cell, Legend, Line, LineChart, Pie, PieChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import ApiUrl from '../../../Common/APIUrl';
-import profile from '../../../Common/Assets/profile.jpg'
+import maleTeacher from '../../../Common/Assets/male-teacher.png'
+import femaleTeacher from '../../../Common/Assets/female-teacher.jpg'
 import 'react-toastify/dist/ReactToastify.css';
 import './Profile.css'
 
@@ -21,6 +22,8 @@ const Profile = () => {
   const linkCheck = new RegExp("^(http|https)://")
 
   const [profileData, setProfileData] = useState({})
+  const [dashboarData, setDashboardData] = useState([])
+  const [batchState, setBatchState] = useState([])
 
   useEffect(() => {
     const userId = localStorage.getItem('id')
@@ -31,7 +34,24 @@ const Profile = () => {
       .catch(function (error) {
         console.log(error);
       })
+    
   }, [isReload])
+  useEffect(()=>{
+    axios.get(ApiUrl.BaseUrl + `dashboard-count/`)
+      .then(function (response) {
+        setDashboardData(response.data)
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+      axios.get(ApiUrl.BaseUrl + `api/batch-name-and-count/`)
+      .then(function (response) {
+        setBatchState(response.data.data)
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+  },[])
 
   const openModal = (peram) => {
     if (peram === 'name') {
@@ -213,8 +233,8 @@ const Profile = () => {
                 </div> */}
             <div className='flex flex-col justify-center items-center pt-20'>{/* left-[21%] top-[10%] */} {/* mt-20 ml-24 absolute left-[15%] top-[12%] z-10*/}
               <div className="avatar placeholder mb-3">
-                <div className="bg-white text-black rounded-full w-24 ring ring-accent ring-offset-base-100 ring-offset-2">
-                  <img src={profile} alt="profile" />
+                <div className="bg-white text-black rounded-full w-24 ring-offset-base-100 ring-offset-2">
+                  <img src={maleTeacher} alt="profile" />
                 </div>
               </div>
               <h1>{profileData?.username}</h1>
@@ -225,7 +245,7 @@ const Profile = () => {
                 <ul className='pl-5 py-12 mt-10 border-t-4'>
                   <li className='grid grid-cols-6 items-center'><div className='col-span-5 w-full flex items-center gap-5'><div className='w-4/12 text-lg font-semibold'>Full Name:</div> {isfullName ? <div className={`flex border rounded-lg ${name ? '' : 'focus-within:border-red-400'}`}><input type="text" placeholder="Type here" className="input w-full max-w-xs focus:outline-0" onChange={(e) => setName(e.target.value)} /> <button type="" className={`btn rounded-l-none ${name ? 'btn-accent' : 'btn-disabled'}`} onClick={() => openModal('name')}><Icon icon="material-symbols:save" className='text-white text-2xl' /></button></div> : <div className='w-7/12'>{profileData?.fullname}</div>}</div> {isfullName ? <Icon icon="radix-icons:cross-2" className='mr-10 cursor-pointer' onClick={() => setIsfullName(false)} /> : <Icon className='mr-10 cursor-pointer' icon="material-symbols:edit" onClick={() => setIsfullName(true)} />}</li>
                   <li className='grid grid-cols-6 items-center'><div className='col-span-5 w-full flex items-center gap-5'><div className='w-4/12 text-lg font-semibold'>Teacher id:</div> <div className='w-7/12'>25</div></div></li>
-                  <li className='grid grid-cols-6 items-center'><div className='col-span-5 w-full flex items-center gap-5'><div className='w-4/12 text-lg font-semibold'>Gender:</div>{isgender?<div className='flex items-center gap-5'><label>Male</label><input type="radio" name="gender" className="radio radio-success" value="2" onChange={(e) => setGender(e.target.value)} /><label >Female</label><input type="radio" name="gender" className="radio radio-success" value="1" onChange={(e) => setGender(e.target.value)} /></div>: <div className='w-7/12'>{profileData?.genders}</div>}</div>{isgender ? <Icon icon="material-symbols:save" className='mr-10 cursor-pointer text-xl' onClick={() => openModal('gender')} /> : <Icon className='mr-10 cursor-pointer' icon="material-symbols:edit" onClick={() => setIsGender(true)} />}</li>{/* {isgender? <div className='flex border rounded-lg'><input type="text" placeholder="Type here" className="input w-full max-w-xs focus:outline-0" /> <button type="" className='btn btn-accent rounded-l-none'><Icon icon="material-symbols:save" className='text-white text-2xl'/></button></div> : <div className='w-7/12'>{profileData?.genders}</div>}</div> {isgender? <Icon icon="radix-icons:cross-2" className='mr-10 cursor-pointer' onClick={()=>setIsGender(false)}/> : <Icon className='mr-10 cursor-pointer' icon="material-symbols:edit" onClick={()=>setIsGender(true)}/>} */}
+                  <li className='grid grid-cols-6 items-center'><div className='col-span-5 w-full flex items-center gap-5'><div className='w-4/12 text-lg font-semibold'>Gender:</div>{isgender?<div className='flex items-center gap-5'><label>Male</label><input type="radio" name="gender" className="radio radio-success" value="2" onChange={(e) => setGender(e.target.value)} /><label >Female</label><input type="radio" name="gender" className="radio radio-success" value="1" onChange={(e) => setGender(e.target.value)} /><Icon icon="material-symbols:save" className='cursor-pointer text-xl' onClick={() => openModal('gender')} /></div>: <div className='w-7/12'>{profileData?.genders}</div>}</div>{isgender ? <Icon icon="radix-icons:cross-2" className='mr-10 cursor-pointer' onClick={() => setIsGender(false)} /> : <Icon className='mr-10 cursor-pointer' icon="material-symbols:edit" onClick={() => setIsGender(true)} />}</li>
                   <li className='grid grid-cols-6 items-center'><div className='col-span-5 w-full flex items-center gap-5'><div className='w-4/12 text-lg font-semibold'>Number:</div> <div className='w-7/12'>{profileData?.phone}</div></div></li>
                   <li className='grid grid-cols-6 items-center'><div className='col-span-5 w-full flex items-center gap-5'><div className='w-4/12 text-lg font-semibold'>Fb id:</div> {isfbId ? <div className={`flex border rounded-lg ${linkCheck.test(fbId) ? '' : 'focus-within:border-red-400'}`}><input onChange={(e) => setFbId(e.target.value)} type="text" placeholder="https://facebook.com" className="input w-full max-w-xs focus:outline-0" /> <button type="" className={`btn rounded-l-none ${linkCheck.test(fbId) ? 'btn-accent' : 'btn-disabled'}`} onClick={() => openModal('link')}><Icon icon="material-symbols:save" className='text-white text-2xl' /></button></div> : <div className='w-7/12 break-words'>{profileData?.fb_id_link}</div>}</div> {isfbId ? <Icon icon="radix-icons:cross-2" className='mr-10 cursor-pointer' onClick={() => setIsfbId(false)} /> : <Icon className='mr-10 cursor-pointer' icon="material-symbols:edit" onClick={() => setIsfbId(true)} />}</li>
                   {/* <li className='grid grid-cols-6 items-center'><div className='col-span-5 w-full flex items-center gap-5'><div className='w-4/12 text-lg font-semibold'>Responsible for:</div> <div className='w-7/12'>All batches</div></div></li> */}
@@ -246,7 +266,7 @@ const Profile = () => {
               <div className="modal-box">
                 <label htmlFor="name-modal" className="btn btn-sm btn-circle absolute right-2 top-2 bg-red-400 border-0 hover:bg-red-400">✕</label>
                 <h3 className="font-bold text-lg text-center mt-10">Are you sure to change your full name?</h3>
-                <p className="py-4 text-center">If you click </p>
+                <p className="py-4 text-center">If you click <kbd className='kbd'>Submit</kbd> your name will be changed.</p>
                 <div className="modal-action">
                   <label htmlFor="name-modal" className="btn btn-accent text-white" onClick={() => updateProfile('name')}>Submit</label>
                 </div>
@@ -258,7 +278,7 @@ const Profile = () => {
               <div className="modal-box">
                 <label htmlFor="gender-modal" className="btn btn-sm btn-circle absolute right-2 top-2 bg-red-400 border-0 hover:bg-red-400">✕</label>
                 <h1 className="py-4 text-center text-2xl font-bold mt-10">Are you sure to change your gender?</h1>
-                <p className="pb-4 text-center">If you click <kbd className='kbd'>Change gender</kbd> button your gender changes will be saved.</p>
+                <p className="pb-4 text-center">If you click <kbd className='kbd'>Change gender</kbd> your gender changes will be saved.</p>
                 <div className="modal-action">
                   {/* <label htmlFor="gender-modal" className="btn btn-error text-white">Close</label> */}
                   <label htmlFor="gender-modal" className="btn btn-accent text-white" onClick={() => updateProfile('gender')}>Change gender</label>
@@ -270,8 +290,8 @@ const Profile = () => {
             <div className="modal">
               <div className="modal-box">
                 <label htmlFor="link-modal" className="btn btn-sm btn-circle absolute right-2 top-2 bg-red-400 border-0 hover:bg-red-400">✕</label>
-                <h3 className="font-bold text-lg">Congratulations random Internet user!</h3>
-                <p className="py-4">You've been selected for a chance to get one year of subscription to use Wikipedia for free!</p>
+                <h3 className="font-bold text-lg text-center mt-10">Are you sure to edit Fb link?</h3>
+                <p className="py-4 text-red-600 text-center font-semibold">Be careful! You can not change your fb link if you change it once.</p>
                 <div className="modal-action">
                   <label htmlFor="link-modal" className="btn btn-accent text-white" onClick={() => updateProfile('link')}>Submit</label>
                 </div>
@@ -334,7 +354,7 @@ const Profile = () => {
               </div>
               <div className='mt-7'>
                 <div className='text-xl font-bold p-5'>
-                  <p>250</p>
+                  <p>{dashboarData?.total_student}</p>
                 </div>
               </div>
             </div>
@@ -345,7 +365,7 @@ const Profile = () => {
               </div>
               <div className='mt-7'>
                 <div className='text-xl font-bold p-5'>
-                  <p>44</p>
+                  <p>{dashboarData?.running_student}</p>
                 </div>
               </div>
             </div>
@@ -367,7 +387,7 @@ const Profile = () => {
               </div>
               <div className='mt-7'>
                 <div className='text-xl font-bold p-5'>
-                  <p>32</p>
+                  <p>{dashboarData?.total_passed}</p>
                 </div>
               </div>
             </div>
@@ -378,7 +398,7 @@ const Profile = () => {
               </div>
               <div className='mt-7'>
                 <div className='text-xl font-bold p-5'>
-                  <p>05</p>
+                  <p>{dashboarData?.total_batch}</p>
                 </div>
               </div>
             </div>
@@ -389,7 +409,7 @@ const Profile = () => {
               </div>
               <div className='mt-7'>
                 <div className='text-xl font-bold p-5'>
-                  <p>05</p>
+                  <p>{dashboarData?.running_batch}</p>
                 </div>
               </div>
             </div>
@@ -400,7 +420,7 @@ const Profile = () => {
               </div>
               <div className='mt-7'>
                 <div className='text-xl font-bold p-5'>
-                  <p>05</p>
+                  <p>{dashboarData?.total_complete_batch}</p>
                 </div>
               </div>
             </div>
@@ -411,18 +431,18 @@ const Profile = () => {
               </div>
               <div className='mt-7'>
                 <div className='text-xl font-bold p-5'>
-                  <p>05</p>
+                  <p>{dashboarData?.all_assignment}</p>
                 </div>
               </div>
             </div>
             <div className='h-fit w-auto max-w-xs flex flex-col items-center justify-between border rounded-3xl p-5 bg-gradient-to-r from-cyan-300 to-blue-400 profile-content text-white'>
               <div className='w-full flex items-center justify-between text-2xl font-semibold'>
-                <h1 className='text-sm'>Pending</h1>
+                <h1 className='text-sm'>Declined</h1>
                 <Icon icon="mdi:assignment-late" className='text-xl' />
               </div>
               <div className='mt-7'>
                 <div className='text-xl font-bold p-5'>
-                  <p>05</p>
+                  <p>{dashboarData?.assignment_declined}</p>
                 </div>
               </div>
             </div>
@@ -433,7 +453,7 @@ const Profile = () => {
               </div>
               <div className='mt-7'>
                 <div className='text-xl font-bold p-5'>
-                  <p>05</p>
+                  <p>{dashboarData?.assignment_approve}</p>
                 </div>
               </div>
             </div>
@@ -444,12 +464,17 @@ const Profile = () => {
       <div className='graph-sec mt-16'>
         <div className='bg-[#efefef30] rounded-xl p-10'>
           <div className='flex flex-col gap-10'>
-            <div className='rounded-2xl bg-white h-96 profile-content pt-20'>
+            <div className='rounded-2xl bg-white h-96 profile-content pt-5 pb-10'>
+            <div className='flex items-center justify-end mr-7 mb-3 gap-1'>
+                <span className='text-gray-300 text-2xl cursor-pointer'><Icon  icon="wpf:next" rotate={2} /></span>
+                <span>5/24</span>
+                <span className='text-gray-300 text-2xl cursor-pointer'><Icon  icon="wpf:next" /></span>
+              </div>
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart
                   width={500}
                   height={300}
-                  data={data}
+                  data={batchState}
                   margin={{
                     top: 5,
                     right: 30,
@@ -458,12 +483,12 @@ const Profile = () => {
                   }}
                   barSize={20}
                 >
-                  <XAxis dataKey="name" scale="point" padding={{ left: 10, right: 10 }} />
+                  <XAxis dataKey="batch_name" scale="point" padding={{ left: 10, right: 10 }} />
                   <YAxis />
-                  <Tooltip />
+                  <Tooltip/>
                   <Legend />
                   {/* <CartesianGrid strokeDasharray="3 3" /> */}
-                  <Bar dataKey="Number" fill="#8884d8" background={{ fill: '#eee' }} />
+                  <Bar dataKey="total_student" fill="#8884d8" background={{ fill: '#eee' }} />
                 </BarChart>
               </ResponsiveContainer>
             </div>
@@ -471,7 +496,7 @@ const Profile = () => {
               <div className="card bg-base-100 shadow-xl profile-content">
                 <div className="card-body relative overflow-hidden">
                   <h2 className="card-title font-normal">Total Batch</h2>
-                  <p className='text-4xl font-bold'>44</p>
+                  <p className='text-4xl font-bold'>{dashboarData?.total_batch}</p>
                   {/* <div className="card-actions justify-end">
                     <button className="btn btn-primary">Buy Now</button>
                   </div> */}
@@ -481,7 +506,7 @@ const Profile = () => {
               <div className="card bg-base-100 shadow-xl profile-content">
                 <div className="card-body relative overflow-hidden">
                   <h2 className="card-title font-normal">Total Students</h2>
-                  <p className='text-4xl font-bold'>14000</p>
+                  <p className='text-4xl font-bold'>{dashboarData?.total_student}</p>
                   {/* <div className="card-actions justify-end">
                     <button className="btn btn-primary">Buy Now</button>
                   </div> */}

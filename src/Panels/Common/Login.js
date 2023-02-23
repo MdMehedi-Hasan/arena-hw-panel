@@ -4,33 +4,46 @@ import animatedImage from './Assets/man.gif'
 import shape from './Assets/graph2.png'
 import axios from 'axios';
 import ApiUrl from './APIUrl';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
-    function login (){
+    function login() {
         const username = document.getElementById('floating_outlined').value
         const password = document.getElementById('floating_outlined2').value
 
-        axios.post(ApiUrl.BaseUrl +'api/user-login/', {
-            username,password
-          })
-          .then(function (response) {
-            console.log(response.data.data);
-            localStorage.setItem('id',response.data.data.user_id)
-          })
-          .catch(function (error) {
-            console.log(error);
-          });
+        if (!username) {
+            toast.error('Username is Required!')
+        }
+        else if (!password) {
+            toast.error('Password is Required!')
+        }
+        else {
+            axios.post(ApiUrl.BaseUrl + 'api/user-login/', {
+                username, password
+            })
+                .then(function (response) {
+                    console.log(response.data.data);
+                    localStorage.setItem('id', response.data.data.user_id)
+                })
+                .catch(function (error) {
+                    toast.error(error.response.data.message, {
+                        draggable: true,
+                    })
+                });
+        }
     }
     return (
         <div className='h-screen flex items-center justify-center bg-[linear-gradient(#56b5e3,#7d58a5)]'>
-            <div className='container flex bg-[#ffffff3b] h-4/5 rounded-3xl shadow-2xl'>
+            <ToastContainer position="top-center" theme="colored" />
+            <div className='flex bg-[#ffffff3b] h-4/5 rounded-3xl shadow-2xl'> {/* container  */}
                 <div className='w-full flex items-center justify-center'>
                     <div className='w-6/12 relative'>
-                    <img src={animatedImage} alt="" className='relative z-50'/>
-                    <img src={shape} alt="" className='absolute top-0 bottom-0'/>
+                        <img src={animatedImage} alt="" className='relative z-50' />
+                        <img src={shape} alt="" className='absolute top-0 bottom-0' />
                     </div>
                 </div>
-                <div className='flex flex-col justify-center items-center w-full bg-white rounded-r-3xl relative h-full'>
+                <div id="parent" className='flex flex-col justify-center items-center w-full bg-white rounded-r-3xl relative h-full'>
                     <div className='w-8/12'>
                         <h1 className='text-3xl font-serif'>Hello!</h1>
                         <h1 className='text-4xl mb-20 mt-5 font-serif'>Welcome back...</h1>

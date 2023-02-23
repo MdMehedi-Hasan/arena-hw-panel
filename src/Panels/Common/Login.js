@@ -36,7 +36,7 @@ const Login = () => {
     return (
         <div className='h-screen flex items-center justify-center bg-[linear-gradient(#56b5e3,#7d58a5)]'>
             <ToastContainer position="top-center" theme="colored" />
-            <div className='container flex bg-[#ffffff3b] h-4/5 rounded-3xl shadow-2xl'>
+            <div className='flex bg-[#ffffff3b] h-4/5 rounded-3xl shadow-2xl'> {/* container  */}
                 <div className='w-full flex items-center justify-center'>
                     <div className='w-6/12 relative'>
                         <img src={animatedImage} alt="" className='relative z-50' />

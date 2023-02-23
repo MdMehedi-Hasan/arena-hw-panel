@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import { Bar, BarChart, CartesianGrid, Cell, Legend, Line, LineChart, Pie, PieChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import ApiUrl from '../../../Common/APIUrl';
-import profile from '../../../Common/Assets/profile.jpg'
+import maleTeacher from '../../../Common/Assets/male-teacher.png'
+import femaleTeacher from '../../../Common/Assets/female-teacher.jpg'
 import 'react-toastify/dist/ReactToastify.css';
 import './Profile.css'
 
@@ -21,6 +22,7 @@ const Profile = () => {
   const linkCheck = new RegExp("^(http|https)://")
 
   const [profileData, setProfileData] = useState({})
+  const [dashboarData, setDashboardData] = useState([])
 
   useEffect(() => {
     const userId = localStorage.getItem('id')
@@ -31,6 +33,14 @@ const Profile = () => {
       .catch(function (error) {
         console.log(error);
       })
+    axios.get(ApiUrl.BaseUrl + `dashboard-count/`)
+      .then(function (response) {
+        setDashboardData(response.data)
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+    
   }, [isReload])
 
   const openModal = (peram) => {
@@ -213,8 +223,8 @@ const Profile = () => {
                 </div> */}
             <div className='flex flex-col justify-center items-center pt-20'>{/* left-[21%] top-[10%] */} {/* mt-20 ml-24 absolute left-[15%] top-[12%] z-10*/}
               <div className="avatar placeholder mb-3">
-                <div className="bg-white text-black rounded-full w-24 ring ring-accent ring-offset-base-100 ring-offset-2">
-                  <img src={profile} alt="profile" />
+                <div className="bg-white text-black rounded-full w-24 ring-offset-base-100 ring-offset-2">
+                  <img src={maleTeacher} alt="profile" />
                 </div>
               </div>
               <h1>{profileData?.username}</h1>
@@ -334,7 +344,7 @@ const Profile = () => {
               </div>
               <div className='mt-7'>
                 <div className='text-xl font-bold p-5'>
-                  <p>250</p>
+                  <p>{dashboarData?.total_student}</p>
                 </div>
               </div>
             </div>
@@ -345,7 +355,7 @@ const Profile = () => {
               </div>
               <div className='mt-7'>
                 <div className='text-xl font-bold p-5'>
-                  <p>44</p>
+                  <p>{dashboarData?.running_student}</p>
                 </div>
               </div>
             </div>
@@ -367,7 +377,7 @@ const Profile = () => {
               </div>
               <div className='mt-7'>
                 <div className='text-xl font-bold p-5'>
-                  <p>32</p>
+                  <p>{dashboarData?.total_passed}</p>
                 </div>
               </div>
             </div>
@@ -378,7 +388,7 @@ const Profile = () => {
               </div>
               <div className='mt-7'>
                 <div className='text-xl font-bold p-5'>
-                  <p>05</p>
+                  <p>{dashboarData?.total_batch}</p>
                 </div>
               </div>
             </div>
@@ -389,7 +399,7 @@ const Profile = () => {
               </div>
               <div className='mt-7'>
                 <div className='text-xl font-bold p-5'>
-                  <p>05</p>
+                  <p>{dashboarData?.running_batch}</p>
                 </div>
               </div>
             </div>
@@ -400,7 +410,7 @@ const Profile = () => {
               </div>
               <div className='mt-7'>
                 <div className='text-xl font-bold p-5'>
-                  <p>05</p>
+                  <p>{dashboarData?.total_complete_batch}</p>
                 </div>
               </div>
             </div>
@@ -411,18 +421,18 @@ const Profile = () => {
               </div>
               <div className='mt-7'>
                 <div className='text-xl font-bold p-5'>
-                  <p>05</p>
+                  <p>{dashboarData?.all_assignment}</p>
                 </div>
               </div>
             </div>
             <div className='h-fit w-auto max-w-xs flex flex-col items-center justify-between border rounded-3xl p-5 bg-gradient-to-r from-cyan-300 to-blue-400 profile-content text-white'>
               <div className='w-full flex items-center justify-between text-2xl font-semibold'>
-                <h1 className='text-sm'>Pending</h1>
+                <h1 className='text-sm'>Declined</h1>
                 <Icon icon="mdi:assignment-late" className='text-xl' />
               </div>
               <div className='mt-7'>
                 <div className='text-xl font-bold p-5'>
-                  <p>05</p>
+                  <p>{dashboarData?.assignment_declined}</p>
                 </div>
               </div>
             </div>
@@ -433,7 +443,7 @@ const Profile = () => {
               </div>
               <div className='mt-7'>
                 <div className='text-xl font-bold p-5'>
-                  <p>05</p>
+                  <p>{dashboarData?.assignment_approve}</p>
                 </div>
               </div>
             </div>

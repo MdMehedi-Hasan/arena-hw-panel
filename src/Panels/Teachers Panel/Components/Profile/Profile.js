@@ -23,6 +23,7 @@ const Profile = () => {
 
   const [profileData, setProfileData] = useState({})
   const [dashboarData, setDashboardData] = useState([])
+  const [batchState, setBatchState] = useState([])
 
   useEffect(() => {
     const userId = localStorage.getItem('id')
@@ -33,6 +34,9 @@ const Profile = () => {
       .catch(function (error) {
         console.log(error);
       })
+    
+  }, [isReload])
+  useEffect(()=>{
     axios.get(ApiUrl.BaseUrl + `dashboard-count/`)
       .then(function (response) {
         setDashboardData(response.data)
@@ -40,8 +44,14 @@ const Profile = () => {
       .catch(function (error) {
         console.log(error);
       })
-    
-  }, [isReload])
+      axios.get(ApiUrl.BaseUrl + `api/batch-name-and-count/`)
+      .then(function (response) {
+        setBatchState(response.data.data)
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+  },[])
 
   const openModal = (peram) => {
     if (peram === 'name') {
@@ -454,12 +464,17 @@ const Profile = () => {
       <div className='graph-sec mt-16'>
         <div className='bg-[#efefef30] rounded-xl p-10'>
           <div className='flex flex-col gap-10'>
-            <div className='rounded-2xl bg-white h-96 profile-content pt-20'>
+            <div className='rounded-2xl bg-white h-96 profile-content pt-5 pb-10'>
+            <div className='flex items-center justify-end mr-7 mb-3 gap-1'>
+                <span className='text-gray-300 text-2xl cursor-pointer'><Icon  icon="wpf:next" rotate={2} /></span>
+                <span>5/24</span>
+                <span className='text-gray-300 text-2xl cursor-pointer'><Icon  icon="wpf:next" /></span>
+              </div>
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart
                   width={500}
                   height={300}
-                  data={data}
+                  data={batchState}
                   margin={{
                     top: 5,
                     right: 30,
@@ -468,12 +483,12 @@ const Profile = () => {
                   }}
                   barSize={20}
                 >
-                  <XAxis dataKey="name" scale="point" padding={{ left: 10, right: 10 }} />
+                  <XAxis dataKey="batch_name" scale="point" padding={{ left: 10, right: 10 }} />
                   <YAxis />
-                  <Tooltip />
+                  <Tooltip/>
                   <Legend />
                   {/* <CartesianGrid strokeDasharray="3 3" /> */}
-                  <Bar dataKey="Number" fill="#8884d8" background={{ fill: '#eee' }} />
+                  <Bar dataKey="total_student" fill="#8884d8" background={{ fill: '#eee' }} />
                 </BarChart>
               </ResponsiveContainer>
             </div>
@@ -481,7 +496,7 @@ const Profile = () => {
               <div className="card bg-base-100 shadow-xl profile-content">
                 <div className="card-body relative overflow-hidden">
                   <h2 className="card-title font-normal">Total Batch</h2>
-                  <p className='text-4xl font-bold'>44</p>
+                  <p className='text-4xl font-bold'>{dashboarData?.total_batch}</p>
                   {/* <div className="card-actions justify-end">
                     <button className="btn btn-primary">Buy Now</button>
                   </div> */}
@@ -491,7 +506,7 @@ const Profile = () => {
               <div className="card bg-base-100 shadow-xl profile-content">
                 <div className="card-body relative overflow-hidden">
                   <h2 className="card-title font-normal">Total Students</h2>
-                  <p className='text-4xl font-bold'>14000</p>
+                  <p className='text-4xl font-bold'>{dashboarData?.total_student}</p>
                   {/* <div className="card-actions justify-end">
                     <button className="btn btn-primary">Buy Now</button>
                   </div> */}
